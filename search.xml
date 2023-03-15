@@ -19,4 +19,18 @@
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>开发过程中所学</title>
+    <url>/2023/03/08/%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%89%80%E5%AD%A6/</url>
+    <content><![CDATA[<p><a href="https://www.bilibili.com/video/BV184411s7qF/?spm_id_from=333.999.0.0&vd_source=86b48351e63676e2663c419acfeeee41">服务器框架教程</a><br>看了30分钟，不太对劲，有点太复杂了，学不懂。<br>##开发环境：<br>Centos7<br>gcc 8.1.0<br>cmake<br>##文件路径<br>    bin – 二进制文件<br>    build – 中间文件路径<br>    cmake – cmake函数文件夹<br>    CMakeLists.txt – cmake的定义文件<br>    lib – 库的输出路径<br>    Makefile<br>    MyPro – 源代码路径<br>    tests – 测试代码路径</p>
+<p>##日志系统<br>1）使用开源项目log4j(提供有C++的接口)</p>
+<pre><code>logger(定义日志类别)
+    |
+        formatter(日志格式)
+    |
+appender(日志输出方式)
+</code></pre>
+<p>##协程库<br>##socket函数库<br>##http协议开发<br>##分布式协议<br>##推荐系统</p>
+]]></content>
+  </entry>
 </search>
