@@ -32,6 +32,9 @@ tests -- 测试代码路径
 appender(日志输出方式)
 </code></pre>
 <h2 id="协程库"><a href="#协程库" class="headerlink" title="协程库"></a>协程库</h2><h2 id="socket函数库"><a href="#socket函数库" class="headerlink" title="socket函数库"></a>socket函数库</h2><h2 id="http协议开发"><a href="#http协议开发" class="headerlink" title="http协议开发"></a>http协议开发</h2><h2 id="分布式协议"><a href="#分布式协议" class="headerlink" title="分布式协议"></a>分布式协议</h2><h2 id="推荐系统"><a href="#推荐系统" class="headerlink" title="推荐系统"></a>推荐系统</h2>]]></content>
+      <categories>
+        <category>Projects</category>
+      </categories>
       <tags>
         <tag>Projects</tag>
       </tags>
