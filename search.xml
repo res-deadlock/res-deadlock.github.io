@@ -24,6 +24,7 @@ Makefile
 MyPro -- 源代码路径
 tests -- 测试代码路径
 </code></pre>
+<span id="more"></span>
 <h2 id="日志系统"><a href="#日志系统" class="headerlink" title="日志系统"></a>日志系统</h2><p>1）使用开源项目log4j(提供有C++的接口)</p>
 <pre><code>logger(定义日志类别)
     |
