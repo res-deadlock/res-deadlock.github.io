@@ -12,25 +12,6 @@
       </tags>
   </entry>
   <entry>
-    <title>电联后记</title>
-    <url>/2023/03/17/%E9%9A%8F%E7%AC%94(1)/</url>
-    <content><![CDATA[<p>刚刚又和妈妈通了电话，我是真的无奈啊。</p>
-<span id="more"></span>
-<p>回想起来，从回到学校以来，首先确定了最基本的春招目标，随后紧接着参加了3场宣讲会，大致弄清楚了校招的时间和流程。</p>
-<p>凭借本科HUST的优势，后面投递的许多家公司都能接到笔试机会。笔试题一开始做得并不顺利，急需针对性的重读C++ Primer和Effective C++。由于笔试公司的要求，编程题需要解答网络编程问题，但这属于我的死穴，因为迄今为止我还没有针对网络编程进行系统性的训练。</p>
-<p>知识上的欠缺像一把利刃，抵在背后，接着一点一点刺入。于是我很快意识到专项训练和项目的重要性。前者，需要进行“面向笔试题学习”；后者，需要找准自身定位，快速做一个符合条件的项目。</p>
-<p>一开始的行动带有盲目性，胡乱找了一个httpd的项目。因为能力实在有限，我没有从主体上分析该项目是否符合我要求的能力，只能去试错。墨菲定律偏偏起效，这个项目只有半截。没有时间产生情绪，马上着手选择下一个项目，有一个高性能服务器还不错，但是太难了，既可惜又觉得，真是长见识了。</p>
-<p>在更换项目的过程中，陆陆续续接了许多公司的笔试和面试，大多都以石沉大海收尾，我很清楚，我离“有所准备”甚至还差很远。</p>
-<p>情势也不总是悲观的，至少有一点可以确定，如果没有频繁的试错，我不会找到一条适合自己的道路。大体方向是一致的，但具体道路是自适应的，我时常这样考虑，只要一直在学习对的知识，结果就不会太差吧。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>第一篇博客</title>
     <url>/2023/03/05/%E9%9A%8F%E7%AC%94/</url>
     <content><![CDATA[<p>截至2023年3月6日，我基本完成了个人博客站的搭建，采用<a href="https://hexo.io/">Hexo</a>框架和<a href="https://github.com/theme-next/hexo-theme-next">NexT</a>主题，整个过程非常顺利。</p>
@@ -66,6 +47,25 @@ TCP和UDP的区别
       </categories>
       <tags>
         <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>电联后记</title>
+    <url>/2023/03/17/%E9%9A%8F%E7%AC%94(1)/</url>
+    <content><![CDATA[<p>刚刚又和妈妈通了电话，我是真的无奈啊。</p>
+<span id="more"></span>
+<p>回想起来，从回到学校以来，首先确定了最基本的春招目标，随后紧接着参加了3场宣讲会，大致弄清楚了校招的时间和流程。</p>
+<p>凭借本科HUST的优势，后面投递的许多家公司都能接到笔试机会。笔试题一开始做得并不顺利，急需针对性的重读C++ Primer和Effective C++。由于笔试公司的要求，编程题需要解答网络编程问题，但这属于我的死穴，因为迄今为止我还没有针对网络编程进行系统性的训练。</p>
+<p>知识上的欠缺像一把利刃，抵在背后，接着一点一点刺入。于是我很快意识到专项训练和项目的重要性。前者，需要进行“面向笔试题学习”；后者，需要找准自身定位，快速做一个符合条件的项目。</p>
+<p>一开始的行动带有盲目性，胡乱找了一个httpd的项目。因为能力实在有限，我没有从主体上分析该项目是否符合我要求的能力，只能去试错。墨菲定律偏偏起效，这个项目只有半截。没有时间产生情绪，马上着手选择下一个项目，有一个高性能服务器还不错，但是太难了，既可惜又觉得，真是长见识了。</p>
+<p>在更换项目的过程中，陆陆续续接了许多公司的笔试和面试，大多都以石沉大海收尾，我很清楚，我离“有所准备”甚至还差很远。</p>
+<p>情势也不总是悲观的，至少有一点可以确定，如果没有频繁的试错，我不会找到一条适合自己的道路。大体方向是一致的，但具体道路是自适应的，我时常这样考虑，只要一直在学习对的知识，结果就不会太差吧。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -198,6 +198,144 @@ $(patsubst %.c, %.o, x.c bar.c)<br />
       </categories>
       <tags>
         <tag>Makefile</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>项目基础——Linux编程——GDB调试</title>
+    <url>/2023/03/26/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(2)/</url>
+    <content><![CDATA[<p>为调试编译时：<br />
+关掉优化选项（‘-On’），打开调试选项（‘-g’），打开warnings（‘-Wall’）</p>
+<pre><code>gcc -g -Wall program.c -o program
+</code></pre>
+<span id="more"></span>
+<p><strong>直接在命令行使用GDB很不舒服，和VS Code结合使用会好很多，建议在VS Code上配置。</strong></p>
+<h2 id="gdb命令"><a class="markdownIt-Anchor" href="#gdb命令"></a> GDB命令</h2>
+<h3 id="启动-退出-查看"><a class="markdownIt-Anchor" href="#启动-退出-查看"></a> 启动、退出、查看</h3>
+<ul>
+<li>启动和退出
+<blockquote>
+<p>gdb 可执行程序<br />
+quit</p>
+</blockquote>
+</li>
+<li>给程序设置参数/获取参数
+<blockquote>
+<p>set args 10 20<br />
+show args</p>
+</blockquote>
+</li>
+<li>GDB使用帮助
+<blockquote>
+<p>help</p>
+</blockquote>
+</li>
+<li>查看当前文件代码
+<blockquote>
+<p>list/1<br />
+list 或 l （默认位置显示）<br />
+list/l 行号（从指定的行显示）<br />
+list/l 函数名（从指定的函数显示）</p>
+</blockquote>
+</li>
+<li>查看非当前文件代码
+<blockquote>
+<p>list/l 文件名:行号<br />
+list/l 文件名:函数名</p>
+</blockquote>
+</li>
+<li>设置显示的行数
+<blockquote>
+<p>show list/listsize<br />
+set list/listsize 行数</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="断点操作"><a class="markdownIt-Anchor" href="#断点操作"></a> 断点操作</h3>
+<ul>
+<li>设置断点
+<blockquote>
+<p>b/break 行号<br />
+b/break 函数名<br />
+b/break 文件名:行号<br />
+b/break 文件名:函数名</p>
+</blockquote>
+</li>
+<li>查看断点
+<blockquote>
+<p>i/info b/break</p>
+</blockquote>
+</li>
+<li>删除断点
+<blockquote>
+<p>d/del/delete 断点编号</p>
+</blockquote>
+</li>
+<li>设置断点无效
+<blockquote>
+<p>dis/disable 断点编号</p>
+</blockquote>
+</li>
+<li>设置断点生效
+<blockquote>
+<p>ena/enable 断点编号</p>
+</blockquote>
+</li>
+<li>设置条件断点（一般用在循环的位置）
+<blockquote>
+<p>b/break 行号 if 条件</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="调试命令"><a class="markdownIt-Anchor" href="#调试命令"></a> 调试命令</h3>
+<ul>
+<li>运行GDB程序
+<blockquote>
+<p>start（程序停在第一行）<br />
+run（遇到断点才停）</p>
+</blockquote>
+</li>
+<li>继续运行，到下一个断点停
+<blockquote>
+<p>c/continue</p>
+</blockquote>
+</li>
+<li>向下执行一行代码（不会进入函数体）
+<blockquote>
+<p>n/next</p>
+</blockquote>
+</li>
+<li>变量操作
+<blockquote>
+<p>p/print 变量名（打印变量值）<br />
+ptype 变量名（打印变量类型）</p>
+</blockquote>
+</li>
+<li>向下单步调试（遇到函数进入函数体）
+<blockquote>
+<p>s/step<br />
+finish（跳出函数体）</p>
+</blockquote>
+</li>
+<li>自动变量操作
+<blockquote>
+<p>display num（自动打印指定变量的值）<br />
+i/info display<br />
+undisplay 编号</p>
+</blockquote>
+</li>
+<li>其他操作
+<blockquote>
+<p>set var 变量名=变量值<br />
+until（跳出循环）</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>项目基础</category>
+      </categories>
+      <tags>
+        <tag>GDB</tag>
       </tags>
   </entry>
   <entry>

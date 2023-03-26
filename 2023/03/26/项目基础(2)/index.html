@@ -22,19 +22,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="夕惕若历无咎">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://example.com/categories/index.html">
+  <meta name="description" content="为调试编译时： 关掉优化选项（‘-On’），打开调试选项（‘-g’），打开warnings（‘-Wall’） gcc -g -Wall program.c -o program">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目基础——Linux编程——GDB调试">
+<meta property="og:url" content="http://example.com/2023/03/26/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(2)/index.html">
 <meta property="og:site_name" content="Shiwen Gao&#39;s Blog">
-<meta property="og:description" content="夕惕若历无咎">
+<meta property="og:description" content="为调试编译时： 关掉优化选项（‘-On’），打开调试选项（‘-g’），打开warnings（‘-Wall’） gcc -g -Wall program.c -o program">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-06T02:24:45.000Z">
-<meta property="article:modified_time" content="2023-03-15T08:06:48.742Z">
+<meta property="article:published_time" content="2023-03-26T05:58:52.692Z">
+<meta property="article:modified_time" content="2023-03-26T07:46:13.462Z">
 <meta property="article:author" content="Shiwen Gao">
+<meta property="article:tag" content="GDB">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/categories/">
+<link rel="canonical" href="http://example.com/2023/03/26/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(2)/">
 
 
 <script id="page-configurations">
@@ -42,13 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类 | Shiwen Gao's Blog
-</title>
+  <title>项目基础——Linux编程——GDB调试 | Shiwen Gao's Blog</title>
   
 
 
@@ -188,51 +188,232 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/26/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(2)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Shiwen Gao">
+      <meta itemprop="description" content="夕惕若历无咎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shiwen Gao's Blog">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          项目基础——Linux编程——GDB调试
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">分类
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2023-03-26 13:58:52 / 修改时间：15:46:13" itemprop="dateCreated datePublished" datetime="2023-03-26T13:58:52+08:00">2023-03-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">项目基础</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>734</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>为调试编译时：<br />
+关掉优化选项（‘-On’），打开调试选项（‘-g’），打开warnings（‘-Wall’）</p>
+<pre><code>gcc -g -Wall program.c -o program
+</code></pre>
+<span id="more"></span>
+<p><strong>直接在命令行使用GDB很不舒服，和VS Code结合使用会好很多，建议在VS Code上配置。</strong></p>
+<h2 id="gdb命令"><a class="markdownIt-Anchor" href="#gdb命令"></a> GDB命令</h2>
+<h3 id="启动-退出-查看"><a class="markdownIt-Anchor" href="#启动-退出-查看"></a> 启动、退出、查看</h3>
+<ul>
+<li>启动和退出
+<blockquote>
+<p>gdb 可执行程序<br />
+quit</p>
+</blockquote>
+</li>
+<li>给程序设置参数/获取参数
+<blockquote>
+<p>set args 10 20<br />
+show args</p>
+</blockquote>
+</li>
+<li>GDB使用帮助
+<blockquote>
+<p>help</p>
+</blockquote>
+</li>
+<li>查看当前文件代码
+<blockquote>
+<p>list/1<br />
+list 或 l （默认位置显示）<br />
+list/l 行号（从指定的行显示）<br />
+list/l 函数名（从指定的函数显示）</p>
+</blockquote>
+</li>
+<li>查看非当前文件代码
+<blockquote>
+<p>list/l 文件名:行号<br />
+list/l 文件名:函数名</p>
+</blockquote>
+</li>
+<li>设置显示的行数
+<blockquote>
+<p>show list/listsize<br />
+set list/listsize 行数</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="断点操作"><a class="markdownIt-Anchor" href="#断点操作"></a> 断点操作</h3>
+<ul>
+<li>设置断点
+<blockquote>
+<p>b/break 行号<br />
+b/break 函数名<br />
+b/break 文件名:行号<br />
+b/break 文件名:函数名</p>
+</blockquote>
+</li>
+<li>查看断点
+<blockquote>
+<p>i/info b/break</p>
+</blockquote>
+</li>
+<li>删除断点
+<blockquote>
+<p>d/del/delete 断点编号</p>
+</blockquote>
+</li>
+<li>设置断点无效
+<blockquote>
+<p>dis/disable 断点编号</p>
+</blockquote>
+</li>
+<li>设置断点生效
+<blockquote>
+<p>ena/enable 断点编号</p>
+</blockquote>
+</li>
+<li>设置条件断点（一般用在循环的位置）
+<blockquote>
+<p>b/break 行号 if 条件</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="调试命令"><a class="markdownIt-Anchor" href="#调试命令"></a> 调试命令</h3>
+<ul>
+<li>运行GDB程序
+<blockquote>
+<p>start（程序停在第一行）<br />
+run（遇到断点才停）</p>
+</blockquote>
+</li>
+<li>继续运行，到下一个断点停
+<blockquote>
+<p>c/continue</p>
+</blockquote>
+</li>
+<li>向下执行一行代码（不会进入函数体）
+<blockquote>
+<p>n/next</p>
+</blockquote>
+</li>
+<li>变量操作
+<blockquote>
+<p>p/print 变量名（打印变量值）<br />
+ptype 变量名（打印变量类型）</p>
+</blockquote>
+</li>
+<li>向下单步调试（遇到函数进入函数体）
+<blockquote>
+<p>s/step<br />
+finish（跳出函数体）</p>
+</blockquote>
+</li>
+<li>自动变量操作
+<blockquote>
+<p>display num（自动打印指定变量的值）<br />
+i/info display<br />
+undisplay 编号</p>
+</blockquote>
+</li>
+<li>其他操作
+<blockquote>
+<p>set var 变量名=变量值<br />
+until（跳出循环）</p>
+</blockquote>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/GDB/" rel="tag"># GDB</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/03/26/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(1)/" rel="prev" title="项目基础——Linux编程——Makefile">
+      <i class="fa fa-chevron-left"></i> 项目基础——Linux编程——Makefile
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="category-all-page">
-            <div class="category-all-title">
-              目前共计 4 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80/">项目基础</a><span class="category-list-count">3</span></li></ul>
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
@@ -283,6 +464,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#gdb%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text"> GDB命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8-%E9%80%80%E5%87%BA-%E6%9F%A5%E7%9C%8B"><span class="nav-number">1.1.</span> <span class="nav-text"> 启动、退出、查看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%AD%E7%82%B9%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.</span> <span class="nav-text"> 断点操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E8%AF%95%E5%91%BD%E4%BB%A4"><span class="nav-number">1.3.</span> <span class="nav-text"> 调试命令</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
