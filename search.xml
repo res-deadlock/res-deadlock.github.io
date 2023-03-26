@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>动态规划刷题总结</title>
+    <url>/2023/03/21/%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>电联后记</title>
     <url>/2023/03/17/%E9%9A%8F%E7%AC%94(1)/</url>
     <content><![CDATA[<p>刚刚又和妈妈通了电话，我是真的无奈啊。</p>
@@ -31,6 +42,134 @@
       </categories>
       <tags>
         <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面试题</title>
+    <url>/2023/03/15/%E9%9D%A2%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="基础知识："><a href="#基础知识：" class="headerlink" title="基础知识："></a>基础知识：</h2><span id="more"></span>
+
+<pre><code>进程间的通信方式
+僵尸进程，孤儿进程
+线程同步怎么解决
+大端和小端的区别
+IO多路复用有哪些方式，区别
+静态库和动态库的制作以及使用
+滑动窗口的机制
+TCP3次握手，4次挥手
+TCP和UDP的区别
+……
+</code></pre>
+]]></content>
+      <categories>
+        <category>面试题</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>项目基础——Linux编程——Makefile</title>
+    <url>/2023/03/26/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(1)/</url>
+    <content><![CDATA[<h2 id="文件命名"><a href="#文件命名" class="headerlink" title="文件命名"></a>文件命名</h2><p>Makefile 或 makefile</p>
+<span id="more"></span>
+
+<h2 id="Makefile-规则"><a href="#Makefile-规则" class="headerlink" title="Makefile 规则"></a>Makefile 规则</h2><ol>
+<li>一个Makefile文件中可以有一个或多个规则，格式：</li>
+</ol>
+<blockquote>
+<p>目标 … : 依赖 …<br>$~~~~~~$命令:（Shell命令）<br>$~~~~~~$……</p>
+<ul>
+<li>目标：最终要生成的文件（伪目标除外）</li>
+<li>依赖：生成目标所需要的文件或者目标</li>
+<li>命令：通过执行命令对依赖操作生成目标（命令前必须使用Tab缩进）</li>
+</ul>
+</blockquote>
+<ol start="2">
+<li><p>其他规则一般都是为第一条规则服务的。</p>
+</li>
+<li><p>make clean ：</p>
+</li>
+</ol>
+<blockquote>
+<p>clean:<br>$~~~~~~$rm xxx -f</p>
+</blockquote>
+<ol start="4">
+<li>伪目标（不会生成伪目标对应的文件）<blockquote>
+<p>.PHONY:伪目标的名称</p>
+</blockquote>
+</li>
+</ol>
+<p>$~~~$示例：</p>
+<blockquote>
+<p>.PHONY:clean<br>clean:<br>$~~~~~~$rm xxx -f</p>
+</blockquote>
+<p><strong>Makefile 默认执行第一条规则，如果后续规则和第一条规则没有关系，则不会执行（需要额外操作）</strong></p>
+<h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><ol>
+<li>命令在执行前，需要先检查规则中的依赖项是否存在</li>
+</ol>
+<blockquote>
+<ul>
+<li>如果存在，执行命令</li>
+<li>如果不存在，向下检查其他规则，检查有没有一个规则是用来生成这个依赖的，如果找到了，则执行该规则中的命令</li>
+</ul>
+</blockquote>
+<ol start="2">
+<li>检测更新，在执行规则中的命令时，会比较目标和依赖文件的时间</li>
+</ol>
+<blockquote>
+<ul>
+<li>如果依赖的时间比目标的时间晚，需要重新生成目标</li>
+<li>如果依赖的时间比目标的时间早，目标不需要更新，对应规则中的命令不需要被执行</li>
+</ul>
+</blockquote>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ol>
+<li>自定义变量<blockquote>
+<p>变量名&#x3D;变量值  </p>
+</blockquote>
+</li>
+<li>预定义变量<blockquote>
+<p>AR: 归档维护程序的名称，默认值为ar<br>CC: C编译器的名称，默认值为gcc<br>CXX: C++编译器的名称，默认值为g++</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>$@: 目标的完整路径<br>$&lt;: 第一个依赖文件的名称<br>$^: 所有的依赖文件<br><em>（以上三个为自动变量，只能在规则的“命令”中使用）</em><br>3. 获取变量的值<br>$(变量名)</p>
+</blockquote>
+<h2 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h2><p>通配符 ‘%’, 匹配的是同一个字符串，如下例，即main.c:main.o<br>可以将规则简化书写为 ：</p>
+<pre><code>%.c:%.o
+    gcc -c $&lt; -o $@
+</code></pre>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><ol>
+<li><p>wildcard </p>
+<blockquote>
+<p>$(wildcard PATTERN…)</p>
+<ul>
+<li>功能：获取指定目录下指定类型的文件列表</li>
+<li>参数：PARTTERN指的是某个或多个目录下对应的某种类型的文件</li>
+<li>返回：得到的若干个文件的文件列表</li>
+<li>示例：<br>$(wilecard *.c .&#x2F;sub&#x2F;*.c)<br>返回值格式: a.c b.c c.c d.c e.c f.c</li>
+</ul>
+</blockquote>
+</li>
+<li><p>patsubst</p>
+<blockquote>
+<p>#(patsubst &lt;pattern&gt;,&lt;replacement&gt;,&lt;text&gt;)</p>
+<ul>
+<li>功能：查找&lt;text&gt;中的单词是否符合模式&lt;pattern&gt;，如果匹配的话，则以&lt;replacement&gt;替换</li>
+<li>&lt;pattern&gt;可以包括通配符 ‘%‘, 表示任意长度的字串。如果&lt;replacement&gt;中也包含’%‘，那么，&lt;replacement&gt;中的这个 ‘%‘ 将是&lt;pattern&gt;中那个 ‘%‘ 代表的字串（如果想要表示真实含义的’%‘符号，可以使用’&#39;进行转义）。</li>
+<li>返回：函数返回被替换后的字符串</li>
+<li>示例：<br>$(patsubst %.c, %.o, x.c bar.c)<br>返回值格式：x.o bar.o</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>项目基础</category>
+      </categories>
+      <tags>
+        <tag>Makefile</tag>
       </tags>
   </entry>
   <entry>
@@ -109,41 +248,6 @@ gcc得到动态库
       </categories>
       <tags>
         <tag>库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>面试题</title>
-    <url>/2023/03/15/%E9%9D%A2%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="基础知识："><a href="#基础知识：" class="headerlink" title="基础知识："></a>基础知识：</h2><span id="more"></span>
-
-<pre><code>进程间的通信方式
-僵尸进程，孤儿进程
-线程同步怎么解决
-大端和小端的区别
-IO多路复用有哪些方式，区别
-静态库和动态库的制作以及使用
-滑动窗口的机制
-TCP3次握手，4次挥手
-TCP和UDP的区别
-……
-</code></pre>
-]]></content>
-      <categories>
-        <category>面试题</category>
-      </categories>
-      <tags>
-        <tag>面试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>动态规划刷题总结</title>
-    <url>/2023/03/21/%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>动态规划</tag>
       </tags>
   </entry>
 </search>
