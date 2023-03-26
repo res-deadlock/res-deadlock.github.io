@@ -12,6 +12,20 @@
       </tags>
   </entry>
   <entry>
+    <title>第一篇博客</title>
+    <url>/2023/03/05/%E9%9A%8F%E7%AC%94/</url>
+    <content><![CDATA[<p>截至2023年3月6日，我基本完成了个人博客站的搭建，采用<a href="https://hexo.io/">Hexo</a>框架和<a href="https://github.com/theme-next/hexo-theme-next">NexT</a>主题，整个过程非常顺利。</p>
+<span id="more"></span>
+<p>悟以往之不谏，知来者之可追。过去无可改变，未来充满变数，只有今天是天赐的礼物。我将在这里记录学习过程中的心得体会，成为更好的自己，从每一个“今天”开始。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>电联后记</title>
     <url>/2023/03/17/%E9%9A%8F%E7%AC%94(1)/</url>
     <content><![CDATA[<p>刚刚又和妈妈通了电话，我是真的无奈啊。</p>
@@ -55,17 +69,81 @@ TCP和UDP的区别
       </tags>
   </entry>
   <entry>
-    <title>第一篇博客</title>
-    <url>/2023/03/05/%E9%9A%8F%E7%AC%94/</url>
-    <content><![CDATA[<p>截至2023年3月6日，我基本完成了个人博客站的搭建，采用<a href="https://hexo.io/">Hexo</a>框架和<a href="https://github.com/theme-next/hexo-theme-next">NexT</a>主题，整个过程非常顺利。</p>
+    <title>项目基础——Linux编程——库</title>
+    <url>/2023/03/08/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<p>Linux高并发服务器开发（from NowCoder）<br>库的相关操作</p>
 <span id="more"></span>
-<p>悟以往之不谏，知来者之可追。过去无可改变，未来充满变数，只有今天是天赐的礼物。我将在这里记录学习过程中的心得体会，成为更好的自己，从每一个“今天”开始。</p>
+<h2 id="环境搭建："><a href="#环境搭建：" class="headerlink" title="环境搭建："></a>环境搭建：</h2><p>VmWare虚拟机；Xshell远程连接，WinSCP文件传输；VS Code</p>
+<h2 id="配置虚拟环境"><a href="#配置虚拟环境" class="headerlink" title="配置虚拟环境"></a>配置虚拟环境</h2><p>网络配置，使用NAT模式，这个可以再了解一下，面试会问到。</p>
+<h2 id="固定系统ip"><a href="#固定系统ip" class="headerlink" title="固定系统ip"></a>固定系统ip</h2><p>为了防止ip动态变化，需要更改Ubuntu的网络配置文件。<br>gcc 和 g++的使用以及区别</p>
+<h2 id="静态库-amp-动态库-共享库"><a href="#静态库-amp-动态库-共享库" class="headerlink" title="静态库&amp;动态库(共享库)"></a>静态库&amp;动态库(共享库)</h2><h3 id="静态库命名规则："><a href="#静态库命名规则：" class="headerlink" title="静态库命名规则："></a>静态库命名规则：</h3><pre><code>Linux: libxxx.a
+ lib: 前缀
+ xxx: 自定义库名称
+ .a: 后缀
+Windows: libxxx.lib
+</code></pre>
+<h3 id="静态库的制作："><a href="#静态库的制作：" class="headerlink" title="静态库的制作："></a>静态库的制作：</h3><pre><code>gcc获得.o文件
+将.o文件打包，使用ar工具（archive）
+ ar rcs libxxx.a xxx.o xxx.o
+  r - 将文件插入备份文件中
+  c - 建立备存文件
+  s - 索引
+</code></pre>
+<h3 id="静态库的使用："><a href="#静态库的使用：" class="headerlink" title="静态库的使用："></a>静态库的使用：</h3><pre><code>gcc -o app main.c -I ./include -l calc -L ./lib
+ -I 添加头文件
+ -l 指明库名称（不是库文件名称）
+ -L 指出库的路径
+</code></pre>
+<h3 id="动态库命名规则："><a href="#动态库命名规则：" class="headerlink" title="动态库命名规则："></a>动态库命名规则：</h3><pre><code>Linux: libxxx.so
+ lib: 前缀
+ xxx: 自定义库名称
+ .so: 后缀
+ 在Linux下是一个可执行文件
+Windows: libxxx.dll
+</code></pre>
+<h3 id="动态库的制作："><a href="#动态库的制作：" class="headerlink" title="动态库的制作："></a>动态库的制作：</h3><pre><code>gcc得到.o文件，得到和位置无关的代码
+ gcc -c -fpic/fPIC a.c b.c
+gcc得到动态库
+ gcc -shared a.o b.o -o libcalc.so
+</code></pre>
+<p>动态库在链接阶段不会被打包到可执行程序中，而是在程序运行后，当使用到动态库里的API时，由动态载入器获取动态库的绝对路径，找到后再将其载入内存。</p>
+<h3 id="查看动态库依赖关系"><a href="#查看动态库依赖关系" class="headerlink" title="查看动态库依赖关系"></a>查看动态库依赖关系</h3><pre><code>ldd xxx
+ xxx: 可执行程序名
+</code></pre>
+<h3 id="动态库配置"><a href="#动态库配置" class="headerlink" title="动态库配置"></a>动态库配置</h3><p>1.配置环境变量LD_LIBRARY_PATH</p>
+<pre><code>暂时配置：
+ 终端执行命令: export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:动态库绝对路径
+
+ 永久配置：
+  用户级：
+   vim ~/.bashrc
+   在末尾添加: export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:动态库绝对路径
+   修改完成后使修改生效，执行: . ~/.bashrc 或者 source ~/.bashrc
+
+  系统级：
+   sudo vim /etc/profile
+   在末尾添加: export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:动态库绝对路径
+   修改完成后使修改生效，执行: source /etc/profile
+</code></pre>
+<p>2.修改 &#x2F;etc&#x2F;ld.so.cache 文件</p>
+<pre><code>sudo vim /etc/ld.so.conf
+把动态库的绝对路径添加进去
+修改完成后更新，执行: sudo ldconfig
+</code></pre>
+<p>3.在 &#x2F;lib&#x2F;, &#x2F;usr&#x2F;lib 目录下修改</p>
+<pre><code>不建议使用
+</code></pre>
+<h3 id="优缺点和使用"><a href="#优缺点和使用" class="headerlink" title="优缺点和使用"></a>优缺点和使用</h3><p>如果库比较小，考虑使用静态库，反之，使用动态库</p>
+<ol>
+<li>静态库<br>优点：加载速度快；发布程序无需提供静态库，移植方便<br>缺点：消耗系统资源；更新、部署、发布麻烦</li>
+<li>动态库<br>优点：可以实现进程资源共享；更新、部署、发布简单；可以控制何时加载<br>缺点：加载速度比静态库慢；发布程序时需要提供动态库</li>
+</ol>
 ]]></content>
       <categories>
-        <category>随笔</category>
+        <category>项目基础</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
+        <tag>库</tag>
       </tags>
   </entry>
   <entry>
@@ -172,84 +250,6 @@ TCP和UDP的区别
       </categories>
       <tags>
         <tag>Makefile</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>项目基础——Linux编程——库</title>
-    <url>/2023/03/08/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<p>Linux高并发服务器开发（from NowCoder）<br>库的相关操作</p>
-<h2 id="环境搭建："><a href="#环境搭建：" class="headerlink" title="环境搭建："></a>环境搭建：</h2><p>VmWare虚拟机；Xshell远程连接，WinSCP文件传输；VS Code</p>
-<h2 id="配置虚拟环境"><a href="#配置虚拟环境" class="headerlink" title="配置虚拟环境"></a>配置虚拟环境</h2><p>网络配置，使用NAT模式，这个可以再了解一下，面试会问到。</p>
-<span id="more"></span>
-<h2 id="固定系统ip"><a href="#固定系统ip" class="headerlink" title="固定系统ip"></a>固定系统ip</h2><p>为了防止ip动态变化，需要更改Ubuntu的网络配置文件。<br>gcc 和 g++的使用以及区别</p>
-<h2 id="静态库-amp-动态库-共享库"><a href="#静态库-amp-动态库-共享库" class="headerlink" title="静态库&amp;动态库(共享库)"></a>静态库&amp;动态库(共享库)</h2><h3 id="静态库命名规则："><a href="#静态库命名规则：" class="headerlink" title="静态库命名规则："></a>静态库命名规则：</h3><pre><code>Linux: libxxx.a
- lib: 前缀
- xxx: 自定义库名称
- .a: 后缀
-Windows: libxxx.lib
-</code></pre>
-<h3 id="静态库的制作："><a href="#静态库的制作：" class="headerlink" title="静态库的制作："></a>静态库的制作：</h3><pre><code>gcc获得.o文件
-将.o文件打包，使用ar工具（archive）
- ar rcs libxxx.a xxx.o xxx.o
-  r - 将文件插入备份文件中
-  c - 建立备存文件
-  s - 索引
-</code></pre>
-<h3 id="静态库的使用："><a href="#静态库的使用：" class="headerlink" title="静态库的使用："></a>静态库的使用：</h3><pre><code>gcc -o app main.c -I ./include -l calc -L ./lib
- -I 添加头文件
- -l 指明库名称（不是库文件名称）
- -L 指出库的路径
-</code></pre>
-<h3 id="动态库命名规则："><a href="#动态库命名规则：" class="headerlink" title="动态库命名规则："></a>动态库命名规则：</h3><pre><code>Linux: libxxx.so
- lib: 前缀
- xxx: 自定义库名称
- .so: 后缀
- 在Linux下是一个可执行文件
-Windows: libxxx.dll
-</code></pre>
-<h3 id="动态库的制作："><a href="#动态库的制作：" class="headerlink" title="动态库的制作："></a>动态库的制作：</h3><pre><code>gcc得到.o文件，得到和位置无关的代码
- gcc -c -fpic/fPIC a.c b.c
-gcc得到动态库
- gcc -shared a.o b.o -o libcalc.so
-</code></pre>
-<p>动态库在链接阶段不会被打包到可执行程序中，而是在程序运行后，当使用到动态库里的API时，由动态载入器获取动态库的绝对路径，找到后再将其载入内存。</p>
-<h3 id="查看动态库依赖关系"><a href="#查看动态库依赖关系" class="headerlink" title="查看动态库依赖关系"></a>查看动态库依赖关系</h3><pre><code>ldd xxx
- xxx: 可执行程序名
-</code></pre>
-<h3 id="动态库配置"><a href="#动态库配置" class="headerlink" title="动态库配置"></a>动态库配置</h3><p>1.配置环境变量LD_LIBRARY_PATH</p>
-<pre><code>暂时配置：
- 终端执行命令: export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:动态库绝对路径
-
- 永久配置：
-  用户级：
-   vim ~/.bashrc
-   在末尾添加: export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:动态库绝对路径
-   修改完成后使修改生效，执行: . ~/.bashrc 或者 source ~/.bashrc
-
-  系统级：
-   sudo vim /etc/profile
-   在末尾添加: export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:动态库绝对路径
-   修改完成后使修改生效，执行: source /etc/profile
-</code></pre>
-<p>2.修改 &#x2F;etc&#x2F;ld.so.cache 文件</p>
-<pre><code>sudo vim /etc/ld.so.conf
-把动态库的绝对路径添加进去
-修改完成后更新，执行: sudo ldconfig
-</code></pre>
-<p>3.在 &#x2F;lib&#x2F;, &#x2F;usr&#x2F;lib 目录下修改</p>
-<pre><code>不建议使用
-</code></pre>
-<h3 id="优缺点和使用"><a href="#优缺点和使用" class="headerlink" title="优缺点和使用"></a>优缺点和使用</h3><p>如果库比较小，考虑使用静态库，反之，使用动态库</p>
-<ol>
-<li>静态库<br>优点：加载速度快；发布程序无需提供静态库，移植方便<br>缺点：消耗系统资源；更新、部署、发布麻烦</li>
-<li>动态库<br>优点：可以实现进程资源共享；更新、部署、发布简单；可以控制何时加载<br>缺点：加载速度比静态库慢；发布程序时需要提供动态库</li>
-</ol>
-]]></content>
-      <categories>
-        <category>项目基础</category>
-      </categories>
-      <tags>
-        <tag>库</tag>
       </tags>
   </entry>
 </search>
