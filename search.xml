@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>电联后记</title>
+    <url>/2023/03/17/%E9%9A%8F%E7%AC%94(1)/</url>
+    <content><![CDATA[<p>刚刚又和妈妈通了电话，我是真的无奈啊。</p>
+<span id="more"></span>
+<p>回想起来，从回到学校以来，首先确定了最基本的春招目标，随后紧接着参加了3场宣讲会，大致弄清楚了校招的时间和流程。</p>
+<p>凭借本科HUST的优势，后面投递的许多家公司都能接到笔试机会。笔试题一开始做得并不顺利，急需针对性的重读C++ Primer和Effective C++。由于笔试公司的要求，编程题需要解答网络编程问题，但这属于我的死穴，因为迄今为止我还没有针对网络编程进行系统性的训练。</p>
+<p>知识上的欠缺像一把利刃，抵在背后，接着一点一点刺入。于是我很快意识到专项训练和项目的重要性。前者，需要进行“面向笔试题学习”；后者，需要找准自身定位，快速做一个符合条件的项目。</p>
+<p>一开始的行动带有盲目性，胡乱找了一个httpd的项目。因为能力实在有限，我没有从主体上分析该项目是否符合我要求的能力，只能去试错。墨菲定律偏偏起效，这个项目只有半截。没有时间产生情绪，马上着手选择下一个项目，有一个高性能服务器还不错，但是太难了，既可惜又觉得，真是长见识了。</p>
+<p>在更换项目的过程中，陆陆续续接了许多公司的笔试和面试，大多都以石沉大海收尾，我很清楚，我离“有所准备”甚至还差很远。</p>
+<p>情势也不总是悲观的，至少有一点可以确定，如果没有频繁的试错，我不会找到一条适合自己的道路。大体方向是一致的，但具体道路是自适应的，我时常这样考虑，只要一直在学习对的知识，结果就不会太差吧。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>第一篇博客</title>
     <url>/2023/03/05/%E9%9A%8F%E7%AC%94/</url>
     <content><![CDATA[<p>截至2023年3月6日，我基本完成了个人博客站的搭建，采用<a href="https://hexo.io/">Hexo</a>框架和<a href="https://github.com/theme-next/hexo-theme-next">NexT</a>主题，整个过程非常顺利。</p>
@@ -15,9 +34,9 @@
       </tags>
   </entry>
   <entry>
-    <title>项目基础——Linux编程</title>
-    <url>/2023/03/08/%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<p>Linux高并发服务器开发（from NowCoder）</p>
+    <title>项目基础——Linux编程——库</title>
+    <url>/2023/03/08/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<p>Linux高并发服务器开发（from NowCoder）<br>库的相关操作</p>
 <h2 id="环境搭建："><a href="#环境搭建：" class="headerlink" title="环境搭建："></a>环境搭建：</h2><p>VmWare虚拟机；Xshell远程连接，WinSCP文件传输；VS Code</p>
 <h2 id="配置虚拟环境"><a href="#配置虚拟环境" class="headerlink" title="配置虚拟环境"></a>配置虚拟环境</h2><p>网络配置，使用NAT模式，这个可以再了解一下，面试会问到。</p>
 <span id="more"></span>
@@ -93,36 +112,6 @@ gcc得到动态库
       </tags>
   </entry>
   <entry>
-    <title>电联后记</title>
-    <url>/2023/03/17/%E9%9A%8F%E7%AC%94(1)/</url>
-    <content><![CDATA[<p>刚刚又和妈妈通了电话，我是真的无奈啊。</p>
-<span id="more"></span>
-<p>回想起来，从回到学校以来，首先确定了最基本的春招目标，随后紧接着参加了3场宣讲会，大致弄清楚了校招的时间和流程。</p>
-<p>凭借本科HUST的优势，后面投递的许多家公司都能接到笔试机会。笔试题一开始做得并不顺利，急需针对性的重读C++ Primer和Effective C++。由于笔试公司的要求，编程题需要解答网络编程问题，但这属于我的死穴，因为迄今为止我还没有针对网络编程进行系统性的训练。</p>
-<p>知识上的欠缺像一把利刃，抵在背后，接着一点一点刺入。于是我很快意识到专项训练和项目的重要性。前者，需要进行“面向笔试题学习”；后者，需要找准自身定位，快速做一个符合条件的项目。</p>
-<p>一开始的行动带有盲目性，胡乱找了一个httpd的项目。因为能力实在有限，我没有从主体上分析该项目是否符合我要求的能力，只能去试错。墨菲定律偏偏起效，这个项目只有半截。没有时间产生情绪，马上着手选择下一个项目，有一个高性能服务器还不错，但是太难了，既可惜又觉得，真是长见识了。</p>
-<p>在更换项目的过程中，陆陆续续接了许多公司的笔试和面试，大多都以石沉大海收尾，我很清楚，我离“有所准备”甚至还差很远。</p>
-<p>情势也不总是悲观的，至少有一点可以确定，如果没有频繁的试错，我不会找到一条适合自己的道路。大体方向是一致的，但具体道路是自适应的，我时常这样考虑，只要一直在学习对的知识，结果就不会太差吧。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>动态规划刷题总结</title>
-    <url>/2023/03/21/%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>动态规划</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>面试题</title>
     <url>/2023/03/15/%E9%9D%A2%E8%AF%95/</url>
     <content><![CDATA[<h2 id="基础知识："><a href="#基础知识：" class="headerlink" title="基础知识："></a>基础知识：</h2><span id="more"></span>
@@ -144,6 +133,17 @@ TCP和UDP的区别
       </categories>
       <tags>
         <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>动态规划刷题总结</title>
+    <url>/2023/03/21/%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>动态规划</tag>
       </tags>
   </entry>
 </search>
