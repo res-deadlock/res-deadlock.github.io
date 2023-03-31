@@ -265,8 +265,8 @@
 <li>一个Makefile文件中可以有一个或多个规则，格式：</li>
 </ol>
 <blockquote>
-<p>目标 … : 依赖 …<br />
- 命令:（Shell命令）<br />
+<p>目标 … : 依赖 …<br>
+ 命令:（Shell命令）<br>
  ……</p>
 <ul>
 <li>目标：最终要生成的文件（伪目标除外）</li>
@@ -283,7 +283,7 @@
 </li>
 </ol>
 <blockquote>
-<p>clean:<br />
+<p>clean:<br>
  rm xxx -f</p>
 </blockquote>
 <ol start="4">
@@ -294,8 +294,8 @@
 </blockquote>
 <p> 示例：</p>
 <blockquote>
-<p>.PHONY:clean<br />
-clean:<br />
+<p>.PHONY:clean<br>
+clean:<br>
  rm xxx -f</p>
 </blockquote>
 <p><strong>Makefile 默认执行第一条规则，如果后续规则和第一条规则没有关系，则不会执行（需要额外操作）</strong></p>
@@ -329,12 +329,12 @@ clean:<br />
 <li>预定义变量</li>
 </ol>
 <blockquote>
-<p>AR: 归档维护程序的名称，默认值为ar<br />
-CC: C编译器的名称，默认值为gcc<br />
+<p>AR: 归档维护程序的名称，默认值为ar<br>
+CC: C编译器的名称，默认值为gcc<br>
 CXX: C++编译器的名称，默认值为g++</p>
-<p>$@: 目标的完整路径<br />
-$&lt;: 第一个依赖文件的名称<br />
-$^: 所有的依赖文件<br />
+<p>$@: 目标的完整路径<br>
+$&lt;: 第一个依赖文件的名称<br>
+$^: 所有的依赖文件<br>
 <em>（以上三个为自动变量，只能在规则的“命令”中使用）</em></p>
 </blockquote>
 <ol start="3">
@@ -344,7 +344,7 @@ $^: 所有的依赖文件<br />
 <p>$(变量名)</p>
 </blockquote>
 <h2 id="模式匹配"><a class="markdownIt-Anchor" href="#模式匹配"></a> 模式匹配</h2>
-<p>通配符 ‘%’, 匹配的是同一个字符串，如下例，即main.c:main.o<br />
+<p>通配符 ‘%’, 匹配的是同一个字符串，如下例，即main.c:main.o<br>
 可以将规则简化书写为 ：</p>
 <pre><code>%.c:%.o
     gcc -c $&lt; -o $@
@@ -359,8 +359,8 @@ $^: 所有的依赖文件<br />
 <li>功能：获取指定目录下指定类型的文件列表</li>
 <li>参数：PARTTERN指的是某个或多个目录下对应的某种类型的文件</li>
 <li>返回：得到的若干个文件的文件列表</li>
-<li>示例：<br />
-$(wilecard *.c ./sub/*.c)<br />
+<li>示例：<br>
+$(wilecard *.c ./sub/*.c)<br>
 返回值格式: a.c b.c c.c d.c e.c f.c</li>
 </ul>
 </blockquote>
@@ -373,8 +373,8 @@ $(wilecard *.c ./sub/*.c)<br />
 <li>功能：查找&lt;text&gt;中的单词是否符合模式&lt;pattern&gt;，如果匹配的话，则以&lt;replacement&gt;替换</li>
 <li>&lt;pattern&gt;可以包括通配符 ‘%’, 表示任意长度的字串。如果&lt;replacement&gt;中也包含’%‘，那么，&lt;replacement&gt;中的这个 ‘%’ 将是&lt;pattern&gt;中那个 ‘%’ 代表的字串（如果想要表示真实含义的’%‘符号，可以使用’'进行转义）。</li>
 <li>返回：函数返回被替换后的字符串</li>
-<li>示例：<br />
-$(patsubst %.c, %.o, x.c bar.c)<br />
+<li>示例：<br>
+$(patsubst %.c, %.o, x.c bar.c)<br>
 返回值格式：x.o bar.o</li>
 </ul>
 </blockquote>
@@ -534,12 +534,12 @@ $(patsubst %.c, %.o, x.c bar.c)<br />
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">4k</span>
+    <span title="站点总字数">5k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4 分钟</span>
+    <span title="站点阅读时长">5 分钟</span>
 </div>
 
         

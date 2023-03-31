@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/resources/exec.jpg">
 <meta property="article:published_time" content="2023-03-31T07:13:39.275Z">
-<meta property="article:modified_time" content="2023-03-31T08:00:14.120Z">
+<meta property="article:modified_time" content="2023-03-31T08:03:06.936Z">
 <meta property="article:author" content="Shiwen Gao">
 <meta property="article:tag" content="exec">
 <meta name="twitter:card" content="summary">
@@ -222,7 +222,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-03-31 15:13:39 / 修改时间：16:00:14" itemprop="dateCreated datePublished" datetime="2023-03-31T15:13:39+08:00">2023-03-31</time>
+              <time title="创建时间：2023-03-31 15:13:39 / 修改时间：16:03:06" itemprop="dateCreated datePublished" datetime="2023-03-31T15:13:39+08:00">2023-03-31</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,7 +240,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>250</span>
+              <span>764</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -267,7 +267,23 @@
 <li>exec 函数族的函数执行成功后不会返回，因为调用进程的实体，包括代码段，数据段和堆栈等都已经被新的内容取代，只留下进程 ID 等一些表面上的信息仍保持原样，颇有些神似“三十六计”中的“金蝉脱壳”。看上去还是旧的躯壳，却已经注入了新的灵魂，只有调用失败了，才会返回-1.</li>
 </ol>
 <h2 id="工作方式"><a class="markdownIt-Anchor" href="#工作方式"></a> 工作方式</h2>
-<p><img src="/resources/exec.jpg" alt="avatar" /></p>
+<p><img src="/resources/exec.jpg" alt="avatar"></p>
+<h2 id="函数族"><a class="markdownIt-Anchor" href="#函数族"></a> 函数族</h2>
+<blockquote>
+<p>◼ int execl(const char *path, const char <em>arg, …/</em> (char *) NULL */);<br>
+◼ int execlp(const char *file, const char <em>arg, … /</em> (char *) NULL */);<br>
+◼ int execle(const char *path, const char <em>arg, …/</em>, (char *) NULL, char *<br>
+const envp[] */);<br>
+◼ int execv(const char *path, char *const argv[]);<br>
+◼ int execvp(const char *file, char *const argv[]);<br>
+◼ int execvpe(const char *file, char *const argv[], char *const envp[]);<br>
+◼ int execve(const char *filename, char *const argv[], char *const envp[]);</p>
+<p>l(list) 参数地址列表，以空指针结尾<br>
+v(vector) 存有各参数地址的指针数组的地址<br>
+p(path) 按 PATH 环境变量指定的目录搜索可执行文件<br>
+e(environment) 存有环境变量字符串地址的指针数组的地址</p>
+</blockquote>
+<h3 id="execl函数"><a class="markdownIt-Anchor" href="#execl函数"></a> execl函数</h3>
 
     </div>
 
@@ -348,7 +364,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text"> 工作方式</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text"> 工作方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%97%8F"><span class="nav-number">2.</span> <span class="nav-text"> 函数族</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#execl%E5%87%BD%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text"> execl函数</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -421,12 +437,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">4k</span>
+    <span title="站点总字数">5k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4 分钟</span>
+    <span title="站点阅读时长">5 分钟</span>
 </div>
 
         
