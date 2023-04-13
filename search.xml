@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>动态规划刷题总结</title>
-    <url>/2023/03/21/%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[]]></content>
+    <title>电联后记</title>
+    <url>/2023/03/17/%E9%9A%8F%E7%AC%94(1)/</url>
+    <content><![CDATA[<p>刚刚又和妈妈通了电话，我是真的无奈啊。</p>
+<span id="more"></span>
+<p>回想起来，从回到学校以来，首先确定了最基本的春招目标，随后紧接着参加了3场宣讲会，大致弄清楚了校招的时间和流程。</p>
+<p>凭借本科HUST的优势，后面投递的许多家公司都能接到笔试机会。笔试题一开始做得并不顺利，急需针对性的重读C++ Primer和Effective C++。由于笔试公司的要求，编程题需要解答网络编程问题，但这属于我的死穴，因为迄今为止我还没有针对网络编程进行系统性的训练。</p>
+<p>知识上的欠缺像一把利刃，抵在背后，接着一点一点刺入。于是我很快意识到专项训练和项目的重要性。前者，需要进行“面向笔试题学习”；后者，需要找准自身定位，快速做一个符合条件的项目。</p>
+<p>一开始的行动带有盲目性，胡乱找了一个httpd的项目。因为能力实在有限，我没有从主体上分析该项目是否符合我要求的能力，只能去试错。墨菲定律偏偏起效，这个项目只有半截。没有时间产生情绪，马上着手选择下一个项目，有一个高性能服务器还不错，但是太难了，既可惜又觉得，真是长见识了。</p>
+<p>在更换项目的过程中，陆陆续续接了许多公司的笔试和面试，大多都以石沉大海收尾，我很清楚，我离“有所准备”甚至还差很远。</p>
+<p>情势也不总是悲观的，至少有一点可以确定，如果没有频繁的试错，我不会找到一条适合自己的道路。大体方向是一致的，但具体道路是自适应的，我时常这样考虑，只要一直在学习对的知识，结果就不会太差吧。</p>
+]]></content>
       <categories>
-        <category>Algorithm</category>
+        <category>随笔</category>
       </categories>
       <tags>
-        <tag>动态规划</tag>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一篇博客</title>
+    <url>/2023/03/05/%E9%9A%8F%E7%AC%94/</url>
+    <content><![CDATA[<p>截至2023年3月6日，我基本完成了个人博客站的搭建，采用<a href="https://hexo.io/">Hexo</a>框架和<a href="https://github.com/theme-next/hexo-theme-next">NexT</a>主题，整个过程非常顺利。</p>
+<span id="more"></span>
+<p>悟以往之不谏，知来者之可追。过去无可改变，未来充满变数，只有今天是天赐的礼物。我将在这里记录学习过程中的心得体会，成为更好的自己，从每一个“今天”开始。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -25,6 +47,17 @@ IO多路复用有哪些方式，区别
 滑动窗口的机制
 TCP3次握手，4次挥手
 TCP和UDP的区别
+
+new和malloc的区别，使用有什么不同
+堆和栈有什么区别
+常见的STL容器，vector和map的底层实现
+const和static区别，inline和define的区别
+有没有用过锁，怎么用
+死锁是什么，怎么产生，有没有遇到死锁
+进程通信
+内存泄漏是什么，什么工具
+UDP和TCP区别，socket流程
+调试工具使用，gdb的命令
 ……
 </code></pre>
 ]]></content>
@@ -33,20 +66,6 @@ TCP和UDP的区别
       </categories>
       <tags>
         <tag>面试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第一篇博客</title>
-    <url>/2023/03/05/%E9%9A%8F%E7%AC%94/</url>
-    <content><![CDATA[<p>截至2023年3月6日，我基本完成了个人博客站的搭建，采用<a href="https://hexo.io/">Hexo</a>框架和<a href="https://github.com/theme-next/hexo-theme-next">NexT</a>主题，整个过程非常顺利。</p>
-<span id="more"></span>
-<p>悟以往之不谏，知来者之可追。过去无可改变，未来充满变数，只有今天是天赐的礼物。我将在这里记录学习过程中的心得体会，成为更好的自己，从每一个“今天”开始。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -179,37 +198,6 @@ $(patsubst %.c, %.o, x.c bar.c)<br>
       </categories>
       <tags>
         <tag>Makefile</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>电联后记</title>
-    <url>/2023/03/17/%E9%9A%8F%E7%AC%94(1)/</url>
-    <content><![CDATA[<p>刚刚又和妈妈通了电话，我是真的无奈啊。</p>
-<span id="more"></span>
-<p>回想起来，从回到学校以来，首先确定了最基本的春招目标，随后紧接着参加了3场宣讲会，大致弄清楚了校招的时间和流程。</p>
-<p>凭借本科HUST的优势，后面投递的许多家公司都能接到笔试机会。笔试题一开始做得并不顺利，急需针对性的重读C++ Primer和Effective C++。由于笔试公司的要求，编程题需要解答网络编程问题，但这属于我的死穴，因为迄今为止我还没有针对网络编程进行系统性的训练。</p>
-<p>知识上的欠缺像一把利刃，抵在背后，接着一点一点刺入。于是我很快意识到专项训练和项目的重要性。前者，需要进行“面向笔试题学习”；后者，需要找准自身定位，快速做一个符合条件的项目。</p>
-<p>一开始的行动带有盲目性，胡乱找了一个httpd的项目。因为能力实在有限，我没有从主体上分析该项目是否符合我要求的能力，只能去试错。墨菲定律偏偏起效，这个项目只有半截。没有时间产生情绪，马上着手选择下一个项目，有一个高性能服务器还不错，但是太难了，既可惜又觉得，真是长见识了。</p>
-<p>在更换项目的过程中，陆陆续续接了许多公司的笔试和面试，大多都以石沉大海收尾，我很清楚，我离“有所准备”甚至还差很远。</p>
-<p>情势也不总是悲观的，至少有一点可以确定，如果没有频繁的试错，我不会找到一条适合自己的道路。大体方向是一致的，但具体道路是自适应的，我时常这样考虑，只要一直在学习对的知识，结果就不会太差吧。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>项目基础——Linux多进程编程——父子进程</title>
-    <url>/2023/03/31/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(3)/</url>
-    <content><![CDATA[<p>读时共享，写时拷贝</p>
-]]></content>
-      <categories>
-        <category>项目基础</category>
-      </categories>
-      <tags>
-        <tag>process</tag>
       </tags>
   </entry>
   <entry>
@@ -370,6 +358,73 @@ until（跳出循环）</p>
       </tags>
   </entry>
   <entry>
+    <title>项目基础——Linux多进程编程——父子进程</title>
+    <url>/2023/03/31/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(3)/</url>
+    <content><![CDATA[<p>读时共享，写时拷贝</p>
+]]></content>
+      <categories>
+        <category>项目基础</category>
+      </categories>
+      <tags>
+        <tag>process</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>动态规划刷题总结</title>
+    <url>/2023/03/21/%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>项目基础——Linux多进程编程——进程退出、孤儿进程、僵尸进程</title>
+    <url>/2023/04/03/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(5)/</url>
+    <content><![CDATA[<h2 id="进程退出"><a class="markdownIt-Anchor" href="#进程退出"></a> 进程退出</h2>
+<p>exit()函数，C标准库函数，会刷新I/O缓冲，关闭文件描述符；<br>
+_exit()函数，Linux系统库函数，不会刷新缓冲区。</p>
+<span id="more"></span>
+<h2 id="孤儿进程"><a class="markdownIt-Anchor" href="#孤儿进程"></a> 孤儿进程</h2>
+<p>◼ 父进程运行结束，但子进程还在运行（未运行结束），这样的子进程就称为孤儿进程<br>
+（Orphan Process）。<br>
+◼ 每当出现一个孤儿进程的时候，内核就把孤儿进程的父进程设置为 init ，而 init<br>
+进程会循环地 wait() 它的已经退出的子进程。这样，当一个孤儿进程凄凉地结束<br>
+了其生命周期的时候，init 进程就会代表党和政府出面处理它的一切善后工作。<br>
+◼ 因此孤儿进程并不会有什么危害。</p>
+<h2 id="僵尸进程"><a class="markdownIt-Anchor" href="#僵尸进程"></a> 僵尸进程</h2>
+<p>◼ 每个进程结束之后, 都会释放自己地址空间中的用户区数据，内核区的 PCB 没有办法<br>
+自己释放掉，需要父进程去释放。<br>
+◼ 进程终止时，父进程尚未回收，子进程残留资源（PCB）存放于内核中，变成僵尸<br>
+（Zombie）进程。<br>
+◼ 僵尸进程不能被 kill -9 杀死，这样就会导致一个问题，如果父进程不调用 wait()<br>
+或 waitpid() 的话，那么保留的那段信息就不会释放，其进程号就会一直被占用，<br>
+但是系统所能使用的进程号是有限的，如果大量的产生僵尸进程，将因为没有可用的进<br>
+程号而导致系统不能产生新的进程，此即为僵尸进程的危害，应当避免。</p>
+<h2 id="进程回收"><a class="markdownIt-Anchor" href="#进程回收"></a> 进程回收</h2>
+<p>◼ 在每个进程退出的时候，内核释放该进程所有的资源、包括打开的文件、占用的内<br>
+存等。但是仍然为其保留一定的信息，这些信息主要主要指进程控制块PCB的信息<br>
+（包括进程号、退出状态、运行时间等）。<br>
+◼ 父进程可以通过调用wait或waitpid得到它的退出状态同时彻底清除掉这个进程。<br>
+◼ wait() 和 waitpid() 函数的功能一样，区别在于，wait() 函数会阻塞，<br>
+waitpid() 可以设置不阻塞，waitpid() 还可以指定等待哪个子进程结束。<br>
+◼ 注意：一次wait或waitpid调用只能清理一个子进程，清理多个子进程应使用循环。</p>
+<h2 id="退出信息相关宏函数"><a class="markdownIt-Anchor" href="#退出信息相关宏函数"></a> 退出信息相关宏函数</h2>
+<p>◼ WIFEXITED(status) 非0，进程正常退出<br>
+◼ WEXITSTATUS(status) 如果上宏为真，获取进程退出的状态（exit的参数）</p>
+<p>◼ WIFSIGNALED(status) 非0，进程异常终止<br>
+◼ WTERMSIG(status) 如果上宏为真，获取使进程终止的信号编号</p>
+<p>◼ WIFSTOPPED(status) 非0，进程处于暂停状态<br>
+◼ WSTOPSIG(status) 如果上宏为真，获取使进程暂停的信号的编号<br>
+◼ WIFCONTINUED(status) 非0，进程暂停后已经继续运行</p>
+]]></content>
+      <categories>
+        <category>项目基础</category>
+      </categories>
+  </entry>
+  <entry>
     <title>项目基础——Linux多进程编程——exec函数族</title>
     <url>/2023/03/31/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(4)/</url>
     <content><![CDATA[<ol>
@@ -431,42 +486,6 @@ int execlp(const char *file, const char <em>arg, … /</em> (char *) NULL */);</
       <tags>
         <tag>exec</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>项目基础——Linux多进程编程——进程退出、孤儿进程、僵尸进程</title>
-    <url>/2023/04/03/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(5)/</url>
-    <content><![CDATA[<h2 id="进程退出"><a class="markdownIt-Anchor" href="#进程退出"></a> 进程退出</h2>
-<p>exit()函数，C标准库函数，会刷新I/O缓冲，关闭文件描述符；<br>
-_exit()函数，Linux系统库函数，不会刷新缓冲区。</p>
-<span id="more"></span>
-<h2 id="孤儿进程"><a class="markdownIt-Anchor" href="#孤儿进程"></a> 孤儿进程</h2>
-<p>◼ 父进程运行结束，但子进程还在运行（未运行结束），这样的子进程就称为孤儿进程<br>
-（Orphan Process）。<br>
-◼ 每当出现一个孤儿进程的时候，内核就把孤儿进程的父进程设置为 init ，而 init<br>
-进程会循环地 wait() 它的已经退出的子进程。这样，当一个孤儿进程凄凉地结束<br>
-了其生命周期的时候，init 进程就会代表党和政府出面处理它的一切善后工作。<br>
-◼ 因此孤儿进程并不会有什么危害。</p>
-<h2 id="僵尸进程"><a class="markdownIt-Anchor" href="#僵尸进程"></a> 僵尸进程</h2>
-<p>◼ 每个进程结束之后, 都会释放自己地址空间中的用户区数据，内核区的 PCB 没有办法<br>
-自己释放掉，需要父进程去释放。<br>
-◼ 进程终止时，父进程尚未回收，子进程残留资源（PCB）存放于内核中，变成僵尸<br>
-（Zombie）进程。<br>
-◼ 僵尸进程不能被 kill -9 杀死，这样就会导致一个问题，如果父进程不调用 wait()<br>
-或 waitpid() 的话，那么保留的那段信息就不会释放，其进程号就会一直被占用，<br>
-但是系统所能使用的进程号是有限的，如果大量的产生僵尸进程，将因为没有可用的进<br>
-程号而导致系统不能产生新的进程，此即为僵尸进程的危害，应当避免。</p>
-<h2 id="进程回收"><a class="markdownIt-Anchor" href="#进程回收"></a> 进程回收</h2>
-<p>◼ 在每个进程退出的时候，内核释放该进程所有的资源、包括打开的文件、占用的内<br>
-存等。但是仍然为其保留一定的信息，这些信息主要主要指进程控制块PCB的信息<br>
-（包括进程号、退出状态、运行时间等）。<br>
-◼ 父进程可以通过调用wait或waitpid得到它的退出状态同时彻底清除掉这个进程。<br>
-◼ wait() 和 waitpid() 函数的功能一样，区别在于，wait() 函数会阻塞，<br>
-waitpid() 可以设置不阻塞，waitpid() 还可以指定等待哪个子进程结束。<br>
-◼ 注意：一次wait或waitpid调用只能清理一个子进程，清理多个子进程应使用循环。</p>
-]]></content>
-      <categories>
-        <category>项目基础</category>
-      </categories>
   </entry>
   <entry>
     <title>项目基础——Linux编程——库</title>
@@ -563,5 +582,13 @@ gcc得到动态库
       <tags>
         <tag>库</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>项目基础——Linux多进程编程——进程间通信</title>
+    <url>/2023/04/11/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(6)/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>项目基础</category>
+      </categories>
   </entry>
 </search>
