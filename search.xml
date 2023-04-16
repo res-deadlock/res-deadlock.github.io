@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>电联后记</title>
+    <url>/2023/03/17/%E9%9A%8F%E7%AC%94(1)/</url>
+    <content><![CDATA[<p>刚刚又和妈妈通了电话，我是真的无奈啊。</p>
+<span id="more"></span>
+<p>回想起来，从回到学校以来，首先确定了最基本的春招目标，随后紧接着参加了3场宣讲会，大致弄清楚了校招的时间和流程。</p>
+<p>凭借本科HUST的优势，后面投递的许多家公司都能接到笔试机会。笔试题一开始做得并不顺利，急需针对性的重读C++ Primer和Effective C++。由于笔试公司的要求，编程题需要解答网络编程问题，但这属于我的死穴，因为迄今为止我还没有针对网络编程进行系统性的训练。</p>
+<p>知识上的欠缺像一把利刃，抵在背后，接着一点一点刺入。于是我很快意识到专项训练和项目的重要性。前者，需要进行“面向笔试题学习”；后者，需要找准自身定位，快速做一个符合条件的项目。</p>
+<p>一开始的行动带有盲目性，胡乱找了一个httpd的项目。因为能力实在有限，我没有从主体上分析该项目是否符合我要求的能力，只能去试错。墨菲定律偏偏起效，这个项目只有半截。没有时间产生情绪，马上着手选择下一个项目，有一个高性能服务器还不错，但是太难了，既可惜又觉得，真是长见识了。</p>
+<p>在更换项目的过程中，陆陆续续接了许多公司的笔试和面试，大多都以石沉大海收尾，我很清楚，我离“有所准备”甚至还差很远。</p>
+<p>情势也不总是悲观的，至少有一点可以确定，如果没有频繁的试错，我不会找到一条适合自己的道路。大体方向是一致的，但具体道路是自适应的，我时常这样考虑，只要一直在学习对的知识，结果就不会太差吧。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>第一篇博客</title>
     <url>/2023/03/05/%E9%9A%8F%E7%AC%94/</url>
     <content><![CDATA[<p>截至2023年3月6日，我基本完成了个人博客站的搭建，采用<a href="https://hexo.io/">Hexo</a>框架和<a href="https://github.com/theme-next/hexo-theme-next">NexT</a>主题，整个过程非常顺利。</p>
@@ -12,6 +31,41 @@
       </categories>
       <tags>
         <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面试题</title>
+    <url>/2023/03/15/%E9%9D%A2%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="基础知识"><a class="markdownIt-Anchor" href="#基础知识"></a> 基础知识：</h2>
+<span id="more"></span>
+<pre><code>进程间的通信方式
+僵尸进程，孤儿进程
+线程同步怎么解决
+大端和小端的区别
+IO多路复用有哪些方式，区别
+静态库和动态库的制作以及使用
+滑动窗口的机制
+TCP3次握手，4次挥手
+TCP和UDP的区别
+
+new和malloc的区别，使用有什么不同
+堆和栈有什么区别
+常见的STL容器，vector和map的底层实现
+const和static区别，inline和define的区别
+有没有用过锁，怎么用
+死锁是什么，怎么产生，有没有遇到死锁
+进程通信
+内存泄漏是什么，什么工具
+UDP和TCP区别，socket流程
+调试工具使用，gdb的命令
+……
+</code></pre>
+]]></content>
+      <categories>
+        <category>面试题</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
       </tags>
   </entry>
   <entry>
@@ -155,217 +209,6 @@ $(patsubst %.c, %.o, x.c bar.c)<br>
       </categories>
       <tags>
         <tag>Makefile</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>电联后记</title>
-    <url>/2023/03/17/%E9%9A%8F%E7%AC%94(1)/</url>
-    <content><![CDATA[<p>刚刚又和妈妈通了电话，我是真的无奈啊。</p>
-<span id="more"></span>
-<p>回想起来，从回到学校以来，首先确定了最基本的春招目标，随后紧接着参加了3场宣讲会，大致弄清楚了校招的时间和流程。</p>
-<p>凭借本科HUST的优势，后面投递的许多家公司都能接到笔试机会。笔试题一开始做得并不顺利，急需针对性的重读C++ Primer和Effective C++。由于笔试公司的要求，编程题需要解答网络编程问题，但这属于我的死穴，因为迄今为止我还没有针对网络编程进行系统性的训练。</p>
-<p>知识上的欠缺像一把利刃，抵在背后，接着一点一点刺入。于是我很快意识到专项训练和项目的重要性。前者，需要进行“面向笔试题学习”；后者，需要找准自身定位，快速做一个符合条件的项目。</p>
-<p>一开始的行动带有盲目性，胡乱找了一个httpd的项目。因为能力实在有限，我没有从主体上分析该项目是否符合我要求的能力，只能去试错。墨菲定律偏偏起效，这个项目只有半截。没有时间产生情绪，马上着手选择下一个项目，有一个高性能服务器还不错，但是太难了，既可惜又觉得，真是长见识了。</p>
-<p>在更换项目的过程中，陆陆续续接了许多公司的笔试和面试，大多都以石沉大海收尾，我很清楚，我离“有所准备”甚至还差很远。</p>
-<p>情势也不总是悲观的，至少有一点可以确定，如果没有频繁的试错，我不会找到一条适合自己的道路。大体方向是一致的，但具体道路是自适应的，我时常这样考虑，只要一直在学习对的知识，结果就不会太差吧。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>面试题</title>
-    <url>/2023/03/15/%E9%9D%A2%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="基础知识"><a class="markdownIt-Anchor" href="#基础知识"></a> 基础知识：</h2>
-<span id="more"></span>
-<pre><code>进程间的通信方式
-僵尸进程，孤儿进程
-线程同步怎么解决
-大端和小端的区别
-IO多路复用有哪些方式，区别
-静态库和动态库的制作以及使用
-滑动窗口的机制
-TCP3次握手，4次挥手
-TCP和UDP的区别
-
-new和malloc的区别，使用有什么不同
-堆和栈有什么区别
-常见的STL容器，vector和map的底层实现
-const和static区别，inline和define的区别
-有没有用过锁，怎么用
-死锁是什么，怎么产生，有没有遇到死锁
-进程通信
-内存泄漏是什么，什么工具
-UDP和TCP区别，socket流程
-调试工具使用，gdb的命令
-……
-</code></pre>
-]]></content>
-      <categories>
-        <category>面试题</category>
-      </categories>
-      <tags>
-        <tag>面试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>项目基础——Linux多进程编程——exec函数族</title>
-    <url>/2023/03/31/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(4)/</url>
-    <content><![CDATA[<ol>
-<li>exec 函数族的作用是根据指定的文件名找到可执行文件，并用它来取代调用进程的内容，换句话说，就是在调用进程内部执行一个可执行文件 <em>（一般在使用中，我们会先fork一个子进程，在子进程中调用exec打开指定文件，从而在子进程运行）。</em></li>
-</ol>
-<span id="more"></span>
-<ol start="2">
-<li>exec 函数族的函数执行成功后不会返回，因为调用进程的实体，包括代码段，数据段和堆栈等都已经被新的内容取代，只留下进程 ID 等一些表面上的信息仍保持原样，颇有些神似“三十六计”中的“金蝉脱壳”。看上去还是旧的躯壳，却已经注入了新的灵魂，只有调用失败了，才会返回-1.</li>
-</ol>
-<h2 id="工作方式"><a class="markdownIt-Anchor" href="#工作方式"></a> 工作方式</h2>
-<p><img src="/resources/exec.jpg" alt="avatar"></p>
-<h2 id="函数族"><a class="markdownIt-Anchor" href="#函数族"></a> 函数族</h2>
-<p>◼ int execl(const char *path, const char <em>arg, …/</em> (char *) NULL */);<br>
-◼ int execlp(const char *file, const char <em>arg, … /</em> (char *) NULL */);<br>
-◼ int execle(const char *path, const char <em>arg, …/</em>, (char *) NULL, char *const envp[] */);<br>
-◼ int execv(const char *path, char *const argv[]);<br>
-◼ int execvp(const char *file, char *const argv[]);<br>
-◼ int execvpe(const char *file, char *const argv[], char *const envp[]);<br>
-◼ int execve(const char *filename, char *const argv[], char *const envp[]);</p>
-<p>l(list) 参数地址列表，以空指针结尾<br>
-v(vector) 存有各参数地址的指针数组的地址<br>
-p(path) 按 PATH 环境变量指定的目录搜索可执行文件<br>
-e(environment) 存有环境变量字符串地址的指针数组的地址</p>
-<h3 id="execl函数"><a class="markdownIt-Anchor" href="#execl函数"></a> execl函数</h3>
-<blockquote>
-<p>#include &lt;unistd.h&gt;<br>
-int execl(const char *path, const char <em>arg, …/</em> (char *) NULL */);</p>
-<p>参数：<br>
- path: 需要指定的执行文件的路径或者名称<br>
-  a.out /home/coder/a.out<br>
- arg：可执行文件需要的参数列表<br>
-  第一个参数一般没有什么作用，为了方便，一般写的是执行程序的名称。<br>
-  从第二个参数开始，写的是需要的参数列表。<br>
-  参数最后需要以NULL结束（哨兵）。<br>
-返回值：<br>
- 只有当调用错误才会有返回值，返回-1，设置errno.<br>
- 调用成功，没有返回值。</p>
-</blockquote>
-<h3 id="execlp函数"><a class="markdownIt-Anchor" href="#execlp函数"></a> execlp函数</h3>
-<blockquote>
-<p>#include &lt;unistd.h&gt;<br>
-int execlp(const char *file, const char <em>arg, … /</em> (char *) NULL */);</p>
-<p><strong>会到环境变量</strong> <em>(env 查看PATH)</em> <strong>中查找指定的可执行文件，如果找到了就执行，否则执行失败</strong></p>
-<p>参数：<br>
- file: 需要指定的可执行文件的文件名<br>
-  a.out 即可<br>
- arg：可执行文件需要的参数列表<br>
-  第一个参数一般没有什么作用，为了方便，一般写的是执行程序的名称。<br>
-  从第二个参数开始，写的是需要的参数列表。<br>
-  参数最后需要以NULL结束（哨兵）。<br>
-返回值：<br>
- 只有当调用错误才会有返回值，返回-1，设置errno.<br>
- 调用成功，没有返回值。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>项目基础</category>
-      </categories>
-      <tags>
-        <tag>exec</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>项目基础——Linux多进程编程——进程间通信</title>
-    <url>/2023/04/11/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(6)/</url>
-    <content><![CDATA[<h2 id="进程通信的概念"><a class="markdownIt-Anchor" href="#进程通信的概念"></a> 进程通信的概念</h2>
-<span id="more"></span>
-<ul>
-<li>
-<p>进程是一个独立的资源分配单元，不同进程之间的资源是独立的，没有关联，不能在一个进程中直接访问另一个进程的资源。</p>
-</li>
-<li>
-<p>但是进程不是孤立的，不同的进程需要进行信息的交互和状态的传递等，因此需要进程间通信（IPC: Inter Processes Communication）。</p>
-</li>
-<li>
-<p>进程间通信的目的：</p>
-<ul>
-<li>
-<p>数据传输：一个进程需要将他的数据发送给另一个进程。</p>
-</li>
-<li>
-<p>通知事件：一个进程需要向另一个或一组进程发送消息，通知它（它们）发生了某种事件（如进程终止时要通知父进程）。</p>
-</li>
-<li>
-<p>资源共享：多个进程之间共享同样的资源。为了做到这一点，需要内核提供互斥和同步机制。</p>
-</li>
-<li>
-<p>进程控制：有些进程希望完全控制另一个进程的执行（如GDB调试），此时控制进程希望能够拦截另一个进程的所有陷入和异常，并能够及时知道它的状态改变。</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="进程间通信方式"><a class="markdownIt-Anchor" href="#进程间通信方式"></a> 进程间通信方式</h2>
-<p><img src="/resources/IPC.jpeg" alt="IPC"><br>
-and 内存映射</p>
-]]></content>
-      <categories>
-        <category>项目基础</category>
-      </categories>
-      <tags>
-        <tag>进程间通信</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>项目基础——Linux多进程编程——匿名管道</title>
-    <url>/2023/04/15/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(7)/</url>
-    <content><![CDATA[<h2 id="匿名管道"><a class="markdownIt-Anchor" href="#匿名管道"></a> 匿名管道</h2>
-<p>匿名管道是UNIX系统IPC的最古老形式，所有UNIX系统都支持这种通信机制。</p>
-<span id="more"></span>
-<h2 id="管道的特点"><a class="markdownIt-Anchor" href="#管道的特点"></a> 管道的特点</h2>
-<ul>
-<li>
-<p>管道其实是一个在<strong>内核内存中</strong>维护的<strong>缓冲器</strong>，这个缓冲器的存储能力是有限的，不同的操作系统大小不一定相同。</p>
-</li>
-<li>
-<p>管道具有文件的性质：读操作、写操作、匿名管道没有文件实体，有名管道有文件实体，但不存储数据。可以按照文件的方式对管道进行操作。</p>
-</li>
-<li>
-<p>一个管道是一个字节流，使用管道时不存在信息或者信息边界的概念，<u>从管道读取数据的进程可以读取任意大小的数据块，而不管写入进程写入管道的数据块的大小是多少</u>。</p>
-</li>
-<li>
-<p>通过管道传递的数据是顺序的，从管道中读取出来的字节的顺序和它们被写入管道的顺序是完全一样的。</p>
-</li>
-<li>
-<p>在管道中的数据的传递方向是单向的，一端用于写入，一端用于读取，管道是半双工的。</p>
-</li>
-<li>
-<p>从管道读数据是一次性操作，数据一旦被读走，它就从管道中被抛弃，释放空间以便写更多的数据，在管道中无法使用 lseek() 来随机的访问数据。</p>
-</li>
-<li>
-<p>匿名管道只能在具有公共祖先的进程（父进程与子进程，或者两个兄弟进程，具有亲缘关系）之间使用。why？ 因为父子进程共享文件描述符表。</p>
-</li>
-</ul>
-<h2 id="管道的数据结构"><a class="markdownIt-Anchor" href="#管道的数据结构"></a> 管道的数据结构</h2>
-<p>循环队列<br>
-<img src="/resources/%E7%AE%A1%E9%81%93%E7%9A%84%E7%BB%93%E6%9E%84.jpg" alt="IPC"></p>
-<h2 id="匿名管道的使用"><a class="markdownIt-Anchor" href="#匿名管道的使用"></a> 匿名管道的使用</h2>
-<p>创建匿名管道</p>
-<pre><code>#include &lt;unistd.h&gt;
-int pipe(int pipefd[2]);
-</code></pre>
-<p>查看管道缓冲大小指令</p>
-<pre><code>ulimit -a
-</code></pre>
-<p>查看管道缓冲大小函数</p>
-<pre><code>#include &lt;unistd.h&gt;
-long fpathconf(int fd, int name);
-</code></pre>
-]]></content>
-      <categories>
-        <category>项目基础</category>
-      </categories>
-      <tags>
-        <tag>匿名管道</tag>
       </tags>
   </entry>
   <entry>
@@ -526,6 +369,69 @@ until（跳出循环）</p>
       </tags>
   </entry>
   <entry>
+    <title>项目基础——Linux多进程编程——exec函数族</title>
+    <url>/2023/03/31/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(4)/</url>
+    <content><![CDATA[<ol>
+<li>exec 函数族的作用是根据指定的文件名找到可执行文件，并用它来取代调用进程的内容，换句话说，就是在调用进程内部执行一个可执行文件 <em>（一般在使用中，我们会先fork一个子进程，在子进程中调用exec打开指定文件，从而在子进程运行）。</em></li>
+</ol>
+<span id="more"></span>
+<ol start="2">
+<li>exec 函数族的函数执行成功后不会返回，因为调用进程的实体，包括代码段，数据段和堆栈等都已经被新的内容取代，只留下进程 ID 等一些表面上的信息仍保持原样，颇有些神似“三十六计”中的“金蝉脱壳”。看上去还是旧的躯壳，却已经注入了新的灵魂，只有调用失败了，才会返回-1.</li>
+</ol>
+<h2 id="工作方式"><a class="markdownIt-Anchor" href="#工作方式"></a> 工作方式</h2>
+<p><img src="/resources/exec.jpg" alt="avatar"></p>
+<h2 id="函数族"><a class="markdownIt-Anchor" href="#函数族"></a> 函数族</h2>
+<p>◼ int execl(const char *path, const char <em>arg, …/</em> (char *) NULL */);<br>
+◼ int execlp(const char *file, const char <em>arg, … /</em> (char *) NULL */);<br>
+◼ int execle(const char *path, const char <em>arg, …/</em>, (char *) NULL, char *const envp[] */);<br>
+◼ int execv(const char *path, char *const argv[]);<br>
+◼ int execvp(const char *file, char *const argv[]);<br>
+◼ int execvpe(const char *file, char *const argv[], char *const envp[]);<br>
+◼ int execve(const char *filename, char *const argv[], char *const envp[]);</p>
+<p>l(list) 参数地址列表，以空指针结尾<br>
+v(vector) 存有各参数地址的指针数组的地址<br>
+p(path) 按 PATH 环境变量指定的目录搜索可执行文件<br>
+e(environment) 存有环境变量字符串地址的指针数组的地址</p>
+<h3 id="execl函数"><a class="markdownIt-Anchor" href="#execl函数"></a> execl函数</h3>
+<blockquote>
+<p>#include &lt;unistd.h&gt;<br>
+int execl(const char *path, const char <em>arg, …/</em> (char *) NULL */);</p>
+<p>参数：<br>
+ path: 需要指定的执行文件的路径或者名称<br>
+  a.out /home/coder/a.out<br>
+ arg：可执行文件需要的参数列表<br>
+  第一个参数一般没有什么作用，为了方便，一般写的是执行程序的名称。<br>
+  从第二个参数开始，写的是需要的参数列表。<br>
+  参数最后需要以NULL结束（哨兵）。<br>
+返回值：<br>
+ 只有当调用错误才会有返回值，返回-1，设置errno.<br>
+ 调用成功，没有返回值。</p>
+</blockquote>
+<h3 id="execlp函数"><a class="markdownIt-Anchor" href="#execlp函数"></a> execlp函数</h3>
+<blockquote>
+<p>#include &lt;unistd.h&gt;<br>
+int execlp(const char *file, const char <em>arg, … /</em> (char *) NULL */);</p>
+<p><strong>会到环境变量</strong> <em>(env 查看PATH)</em> <strong>中查找指定的可执行文件，如果找到了就执行，否则执行失败</strong></p>
+<p>参数：<br>
+ file: 需要指定的可执行文件的文件名<br>
+  a.out 即可<br>
+ arg：可执行文件需要的参数列表<br>
+  第一个参数一般没有什么作用，为了方便，一般写的是执行程序的名称。<br>
+  从第二个参数开始，写的是需要的参数列表。<br>
+  参数最后需要以NULL结束（哨兵）。<br>
+返回值：<br>
+ 只有当调用错误才会有返回值，返回-1，设置errno.<br>
+ 调用成功，没有返回值。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>项目基础</category>
+      </categories>
+      <tags>
+        <tag>exec</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>项目基础——Linux多进程编程——父子进程</title>
     <url>/2023/03/31/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(3)/</url>
     <content><![CDATA[<p>读时共享，写时拷贝</p>
@@ -580,6 +486,91 @@ waitpid() 可以设置不阻塞，waitpid() 还可以指定等待哪个子进程
       <categories>
         <category>项目基础</category>
       </categories>
+  </entry>
+  <entry>
+    <title>项目基础——Linux多进程编程——匿名管道</title>
+    <url>/2023/04/15/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(7)/</url>
+    <content><![CDATA[<h2 id="匿名管道"><a class="markdownIt-Anchor" href="#匿名管道"></a> 匿名管道</h2>
+<p>匿名管道是UNIX系统IPC的最古老形式，所有UNIX系统都支持这种通信机制。</p>
+<span id="more"></span>
+<h2 id="管道的特点"><a class="markdownIt-Anchor" href="#管道的特点"></a> 管道的特点</h2>
+<ul>
+<li>
+<p>管道其实是一个在<strong>内核内存中</strong>维护的<strong>缓冲器</strong>，这个缓冲器的存储能力是有限的，不同的操作系统大小不一定相同。</p>
+</li>
+<li>
+<p>管道具有文件的性质：读操作、写操作、匿名管道没有文件实体，有名管道有文件实体，但不存储数据。可以按照文件的方式对管道进行操作。</p>
+</li>
+<li>
+<p>一个管道是一个字节流，使用管道时不存在信息或者信息边界的概念，<u>从管道读取数据的进程可以读取任意大小的数据块，而不管写入进程写入管道的数据块的大小是多少</u>。</p>
+</li>
+<li>
+<p>通过管道传递的数据是顺序的，从管道中读取出来的字节的顺序和它们被写入管道的顺序是完全一样的。</p>
+</li>
+<li>
+<p>在管道中的数据的传递方向是单向的，一端用于写入，一端用于读取，管道是半双工的。</p>
+</li>
+<li>
+<p>从管道读数据是一次性操作，数据一旦被读走，它就从管道中被抛弃，释放空间以便写更多的数据，在管道中无法使用 lseek() 来随机的访问数据。</p>
+</li>
+<li>
+<p>匿名管道只能在具有公共祖先的进程（父进程与子进程，或者两个兄弟进程，具有亲缘关系）之间使用。why？ 因为父子进程共享文件描述符表。</p>
+</li>
+</ul>
+<h2 id="管道的数据结构"><a class="markdownIt-Anchor" href="#管道的数据结构"></a> 管道的数据结构</h2>
+<p>循环队列<br>
+<img src="/resources/%E7%AE%A1%E9%81%93%E7%9A%84%E7%BB%93%E6%9E%84.jpg" alt="IPC"></p>
+<h2 id="匿名管道的使用"><a class="markdownIt-Anchor" href="#匿名管道的使用"></a> 匿名管道的使用</h2>
+<p>创建匿名管道</p>
+<pre><code>#include &lt;unistd.h&gt;
+int pipe(int pipefd[2]);
+</code></pre>
+<p>查看管道缓冲大小指令</p>
+<pre><code>ulimit -a
+</code></pre>
+<p>查看管道缓冲大小函数</p>
+<pre><code>#include &lt;unistd.h&gt;
+long fpathconf(int fd, int name);
+</code></pre>
+<h2 id="something-else"><a class="markdownIt-Anchor" href="#something-else"></a> something else</h2>
+<ul>
+<li>管道默认是阻塞的，如果管道中没有数据，那么read阻塞；如果管道满了，write阻塞。</li>
+<li>在开发中使用匿名管道，一般不会实现双向通信，即：数据的流向要么<strong>只</strong>从父进程到子进程，要么<strong>只</strong>从子进程到父进程，只有单向的传输。</li>
+</ul>
+<h2 id="几种情况"><a class="markdownIt-Anchor" href="#几种情况"></a> 几种情况</h2>
+<p>使用管道时需要注意以下几种特殊情况：</p>
+<ol>
+<li>
+<p>所有指向管道write端的文件描述符都关闭了（管道write端引用计数为0），有进程从管道的read端读数据，那么管道中剩余的数据被读取后，再次read会返回0，就和读到文件末尾一样。</p>
+</li>
+<li>
+<p>如果有指向管道write端的文件描述符没有关闭（管道write端引用计数&gt;0），而持有管道write端的进程也没有向管道中写数据，这个时候有进程从管道中读取数据，那么管道中剩余的数据被读取后，再次调用read会<strong>阻塞</strong>，直到管道中有数据可以读，才读取数据并返回。</p>
+</li>
+<li>
+<p>如果所有指向管道read端的文件描述符都关闭了（管道read端引用计数为0），这个时候有进程向管道中写数据，那么该进程会收到一个信号 SIGPIPE，通常会导致进程异常终止。</p>
+</li>
+<li>
+<p>如果有指向管道read端的文件描述符没有关闭（管道read端引用计数&gt;0），而持有管道read端的进程也没有从管道中读数据，这个时候有进程向管道中写数据，那么在管道被写满的时候，再次调用write会<strong>阻塞</strong>，直到管道中有空位置，才能再次写入数据并返回。</p>
+</li>
+</ol>
+<p>总结：<br>
+读管道：<br>
+管道中有数据：read返回实际读到的字节数<br>
+管道中无数据：<br>
+写端都被关闭：read返回0<br>
+写端没有完全关闭：read会阻塞等待<br>
+写管道：<br>
+管道读端都被关闭：进程异常终止（SIGPIPE）<br>
+管道读端没有完全关闭：<br>
+管道已满：write阻塞<br>
+管道未满：write将数据写入，并返回实际写入的字节数</p>
+]]></content>
+      <categories>
+        <category>项目基础</category>
+      </categories>
+      <tags>
+        <tag>匿名管道</tag>
+      </tags>
   </entry>
   <entry>
     <title>项目基础——Linux编程——库</title>
@@ -675,6 +666,47 @@ gcc得到动态库
       </categories>
       <tags>
         <tag>库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>项目基础——Linux多进程编程——进程间通信</title>
+    <url>/2023/04/11/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(6)/</url>
+    <content><![CDATA[<h2 id="进程通信的概念"><a class="markdownIt-Anchor" href="#进程通信的概念"></a> 进程通信的概念</h2>
+<span id="more"></span>
+<ul>
+<li>
+<p>进程是一个独立的资源分配单元，不同进程之间的资源是独立的，没有关联，不能在一个进程中直接访问另一个进程的资源。</p>
+</li>
+<li>
+<p>但是进程不是孤立的，不同的进程需要进行信息的交互和状态的传递等，因此需要进程间通信（IPC: Inter Processes Communication）。</p>
+</li>
+<li>
+<p>进程间通信的目的：</p>
+<ul>
+<li>
+<p>数据传输：一个进程需要将他的数据发送给另一个进程。</p>
+</li>
+<li>
+<p>通知事件：一个进程需要向另一个或一组进程发送消息，通知它（它们）发生了某种事件（如进程终止时要通知父进程）。</p>
+</li>
+<li>
+<p>资源共享：多个进程之间共享同样的资源。为了做到这一点，需要内核提供互斥和同步机制。</p>
+</li>
+<li>
+<p>进程控制：有些进程希望完全控制另一个进程的执行（如GDB调试），此时控制进程希望能够拦截另一个进程的所有陷入和异常，并能够及时知道它的状态改变。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="进程间通信方式"><a class="markdownIt-Anchor" href="#进程间通信方式"></a> 进程间通信方式</h2>
+<p><img src="/resources/IPC.jpeg" alt="IPC"><br>
+and 内存映射</p>
+]]></content>
+      <categories>
+        <category>项目基础</category>
+      </categories>
+      <tags>
+        <tag>进程间通信</tag>
       </tags>
   </entry>
 </search>
