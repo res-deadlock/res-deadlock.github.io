@@ -34,14 +34,165 @@
       </tags>
   </entry>
   <entry>
-    <title>动态规划刷题总结</title>
-    <url>/2023/03/21/%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[]]></content>
+    <title>项目基础——Linux多进程编程——信号</title>
+    <url>/2023/04/21/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(11)/</url>
+    <content><![CDATA[<p>信号是Linux进程间通信的最古老的方式之一，是事件发生时对进程的通知机制，有时也称为软件中断。它是在软件层次上对中断机制的一种模拟，是一种<strong>异步</strong>通信的方式。信号可以导致一个正在运行的进程被另一个正在运行的异步进程中断，转而处理某一个突发事件。</p>
+<span id="more"></span>
+<p>发往进程的诸多信号，通常都是源于内核。引发内核为进程产生信号的各类事件如下：</p>
+<ul>
+<li>对于前台进程，用户可以通过输入特殊的终端字符来给它发送信号。比如输入Ctrl+C 通常会给进程发送一个中断信号。</li>
+<li>硬件发生异常，即硬件检测到一个错误条件并通知内核，随即再由内核发送相应信号给相关进程。比如执行一条异常的机器语言指令，诸如被 0 除，或者引用了无法访问的内存区域。</li>
+<li>系统状态变化，比如 alarm 定时器到期将引起 SIGALRM 信号，进程执行的 CPU 时间超限，或者该进程的某个子进程退出。</li>
+<li>运行 kill 命令或调用 kill 函数。</li>
+</ul>
+<h3 id="使用信号的两个主要目的"><a class="markdownIt-Anchor" href="#使用信号的两个主要目的"></a> 使用信号的两个主要目的：</h3>
+<ol>
+<li>让进程知道已经发生了一个特定的事情。</li>
+<li>强迫进程执行它自己代码中的信号处理程序。</li>
+</ol>
+<h3 id="信号的特点"><a class="markdownIt-Anchor" href="#信号的特点"></a> 信号的特点：</h3>
+<ul>
+<li>使用简单</li>
+<li>不能携带大量信息</li>
+<li>满足某个特定条件才发送</li>
+<li>优先级比较高</li>
+</ul>
+<p>查看系统定义的信号列表：</p>
+<pre><code>kill –l
+</code></pre>
+<p>前 31 个信号为常规信号，其余为实时信号。</p>
+<h3 id="几个常见信号及其对应事件"><a class="markdownIt-Anchor" href="#几个常见信号及其对应事件"></a> 几个常见信号及其对应事件：</h3>
+<h3 id="信号的5种默认处理动作"><a class="markdownIt-Anchor" href="#信号的5种默认处理动作"></a> 信号的5种默认处理动作：</h3>
+<p>查看信号的详细信息：</p>
+<pre><code>man 7 signal
+</code></pre>
+<p>◼ 信号的 5 中默认处理动作</p>
+<blockquote>
+<p>Term 终止进程<br>
+Ign 当前进程忽略掉这个信号<br>
+Core 终止进程，并生成一个Core文件<br>
+Stop 暂停当前进程<br>
+Cont 继续执行当前被暂停的进程</p>
+</blockquote>
+<p>◼ 信号的几种状态：产生、未决、递达<br>
+◼ SIGKILL 和 SIGSTOP 信号不能被捕捉、阻塞或者忽略，只能执行默认动作。</p>
+<h3 id="信号相关的函数"><a class="markdownIt-Anchor" href="#信号相关的函数"></a> 信号相关的函数</h3>
+<p>kill</p>
+<pre><code>#include &lt;sys/types.h&gt;
+#include &lt;signal.h&gt;
+
+int kill(pid_t pid, int sig);
+    功能：给任何的进程或进程组 pid 发送任何信号 sig
+    参数: 
+        pid:
+            pid &gt; 0 将信号发送给指定的进程
+            pid = 0 将信号发送给当前的进程组
+            pid = -1 将信号发送给每一个有权限接受这个信号的进程
+            pid &lt; -1 这个pid就等于某个进程组的ID取反（原123，后-123）
+        sig: 需要发送的信号编号或者宏值，0表示不发送任何信号
+    返回值：
+        成功：0
+        失败：-1
+</code></pre>
+<p>raise</p>
+<pre><code>int raise(int sig);
+    功能: 给当前进程发送信号
+    参数:
+        sig: 要发送的信号
+    返回值：
+        成功: 0
+        失败: 非0
+    kill(getpid(), sig);
+</code></pre>
+<p>abort</p>
+<pre><code>void abort(void);
+    功能：发送一个SIGABRT信号给当前进程，默认杀死当前进程。
+    kill(getpid(), SIGABRT);
+</code></pre>
+<p>alarm</p>
+<pre><code>#include &lt;unistd.h&gt;
+
+unsigned int alarm(unsigned int seconds);
+    功能：设置定时器。函数调用开始倒计时，当倒计时为0时，函数会给当前进程发送信号SIGALARM，默认终止进程。
+    参数：seconds（秒），倒计时的时常。
+        seconds = 0 定时器无效
+        取消一个定时器：alarm(0);
+    返回值：
+        如果之前没有定时器，返回0
+        如果之前有定时器，返回倒计时剩余的时间
+注意：
+    每个进程都有唯一的一个定时器
+    实际的时间 = 内核时间 + 用户时间 + 消耗的时间
+    进行文件IO操作的时候比较浪费时间
+    定时器，与进程的状态（等待就绪执行……）无关，属于自然计时法，无论进程处于什么状态，都会计时
+</code></pre>
+<p>setitimer（非阻塞）</p>
+<pre><code>#include &lt;sys/time.h&gt;
+
+int setitimer(int which, const struct itimerval *new_val, struct itimerval *old_value);
+    功能：设置定时器，可以替代alarm函数，精度是微秒比alarm高，可以实现周期性的定时
+    参数：
+        which: 定时器以什么时间计时
+            ITIMER_REAL: 真实时间，时间到达，发送 SIGALRM 信号  常用
+            ITIMER_VIRTUAL: 用户时间，时间到达，发送 SIGVTALRM
+            ITIMER_PROF: 以该进程在用户态和内核态下所消耗的时间来计算，时间到达，发送 SIGPROF信号。
+
+        new_value: 设置定时器的属性（延迟多长时间定时）
+            struct itimerval &#123; //定时器的结构体
+                struct timeval it_interval; /* 每个阶段的时间，间隔时间 */
+                struct timeval it_value;    /* 延迟多长时间执行定时器 */
+            &#125;;
+
+            struct timeval &#123; //时间的结构体
+                time_t      tv_sec;         /* 秒数 */
+                suseconds_t tv_usec;        /* 微秒 */
+            &#125;;
+
+            例子：过10s后每个2s定时一次
+                struct itimerval new_value;
+
+                new_value.it_interval.tv_sec = 2;
+                new_value.it_interval.tv_usec = 0;
+
+                new_value.it_value.tv_sec = 10;
+                new_value.it_value.tv_sec = 0;
+
+        old_value: 记录的上一次的定时的时间参数，一般不使用，指定NULL
+    返回值：
+        成功: 0
+        失败: -1
+</code></pre>
+<p>signal（信号捕捉函数）</p>
+<pre><code>#include &lt;signal.h&gt;
+typedef void (*sighandler_t)(int); //函数指针，int类型的参数表示捕捉到的信号的值
+sighandler_t signal(int signum, sighandler_t handler);
+    功能：设置某个信号的捕捉行为
+    参数：
+        signum: 要捕捉的信号（有些信号不可捕捉）
+        handler: 捕捉到的信号要如何处理
+            SIG_IGN: 忽略信号
+            SIG_DFT: 使用信号默认的行为
+            回调函数：这个函数是内核调用的，程序员是负责写，捕捉到信号后如何处理
+    返回值：
+        成功：返回上一次注册的信号处理函数的地址，第一次调用返回NULL
+        失败：返回SIG_ERR，设置errno
+
+    SIGKILL SIGSTOP不能被捕捉，不能被忽略
+    回调函数：
+        需要程序员实现，提前准备好的，函数的类型根据实际需求，看函数指针的定义
+        不是程序员调用，而是当信号产生由内核/框架调用
+        函数指针是实现回调函数的手段，函数实现后，将函数名放到函数指针的位置就可以了
+    捕捉SIGALRM信号时要先注册signal信号捕捉函数，再设置定时器
+
+
+int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact);
+</code></pre>
+]]></content>
       <categories>
-        <category>Algorithm</category>
+        <category>项目基础</category>
       </categories>
       <tags>
-        <tag>动态规划</tag>
+        <tag>信号</tag>
       </tags>
   </entry>
   <entry>
@@ -86,7 +237,7 @@ UDP和TCP区别，socket流程
 <span id="more"></span>
 <ol>
 <li>
-<p>如果对mmap的返回值(ptr)做<ins>操作(ptr</ins>), munmap是否能够成功?</p>
+<p>如果对mmap的返回值(ptr)做++操作(ptr++), munmap是否能够成功?</p>
 <pre><code> void* ptr = mmap(...);
  ptr++; //可以进行这一步操作，但是会使得 munmap(ptr, len); 不能正确释放。
 </code></pre>
@@ -141,6 +292,17 @@ UDP和TCP区别，socket流程
       </categories>
       <tags>
         <tag>内存映射</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>动态规划刷题总结</title>
+    <url>/2023/03/21/%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>动态规划</tag>
       </tags>
   </entry>
   <entry>
@@ -273,18 +435,6 @@ $(patsubst %.c, %.o, x.c bar.c)<br>
       </categories>
       <tags>
         <tag>Makefile</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>项目基础——Linux多进程编程——父子进程</title>
-    <url>/2023/03/31/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(3)/</url>
-    <content><![CDATA[<p>读时共享，写时拷贝</p>
-]]></content>
-      <categories>
-        <category>项目基础</category>
-      </categories>
-      <tags>
-        <tag>process</tag>
       </tags>
   </entry>
   <entry>
@@ -445,6 +595,55 @@ until（跳出循环）</p>
       </tags>
   </entry>
   <entry>
+    <title>项目基础——Linux多进程编程——进程退出、孤儿进程、僵尸进程</title>
+    <url>/2023/04/03/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(5)/</url>
+    <content><![CDATA[<h2 id="进程退出"><a class="markdownIt-Anchor" href="#进程退出"></a> 进程退出</h2>
+<p>exit()函数，C标准库函数，会刷新I/O缓冲，关闭文件描述符；<br>
+_exit()函数，Linux系统库函数，不会刷新缓冲区。</p>
+<span id="more"></span>
+<h2 id="孤儿进程"><a class="markdownIt-Anchor" href="#孤儿进程"></a> 孤儿进程</h2>
+<p>◼ 父进程运行结束，但子进程还在运行（未运行结束），这样的子进程就称为孤儿进程<br>
+（Orphan Process）。<br>
+◼ 每当出现一个孤儿进程的时候，内核就把孤儿进程的父进程设置为 init ，而 init<br>
+进程会循环地 wait() 它的已经退出的子进程。这样，当一个孤儿进程凄凉地结束<br>
+了其生命周期的时候，init 进程就会代表党和政府出面处理它的一切善后工作。<br>
+◼ 因此孤儿进程并不会有什么危害。</p>
+<h2 id="僵尸进程"><a class="markdownIt-Anchor" href="#僵尸进程"></a> 僵尸进程</h2>
+<p>◼ 每个进程结束之后, 都会释放自己地址空间中的用户区数据，内核区的 PCB 没有办法<br>
+自己释放掉，需要父进程去释放。<br>
+◼ 进程终止时，父进程尚未回收，子进程残留资源（PCB）存放于内核中，变成僵尸<br>
+（Zombie）进程。<br>
+◼ 僵尸进程不能被 kill -9 杀死，这样就会导致一个问题，如果父进程不调用 wait()<br>
+或 waitpid() 的话，那么保留的那段信息就不会释放，其进程号就会一直被占用，<br>
+但是系统所能使用的进程号是有限的，如果大量的产生僵尸进程，将因为没有可用的进<br>
+程号而导致系统不能产生新的进程，此即为僵尸进程的危害，应当避免。</p>
+<h2 id="进程回收"><a class="markdownIt-Anchor" href="#进程回收"></a> 进程回收</h2>
+<p>◼ 在每个进程退出的时候，内核释放该进程所有的资源、包括打开的文件、占用的内<br>
+存等。但是仍然为其保留一定的信息，这些信息主要主要指进程控制块PCB的信息<br>
+（包括进程号、退出状态、运行时间等）。<br>
+◼ 父进程可以通过调用wait或waitpid得到它的退出状态同时彻底清除掉这个进程。<br>
+◼ wait() 和 waitpid() 函数的功能一样，区别在于，wait() 函数会阻塞，<br>
+waitpid() 可以设置不阻塞，waitpid() 还可以指定等待哪个子进程结束。<br>
+◼ 注意：一次wait或waitpid调用只能清理一个子进程，清理多个子进程应使用循环。</p>
+<h2 id="退出信息相关宏函数"><a class="markdownIt-Anchor" href="#退出信息相关宏函数"></a> 退出信息相关宏函数</h2>
+<p>◼ WIFEXITED(status) 非0，进程正常退出<br>
+◼ WEXITSTATUS(status) 如果上宏为真，获取进程退出的状态（exit的参数）</p>
+<p>◼ WIFSIGNALED(status) 非0，进程异常终止<br>
+◼ WTERMSIG(status) 如果上宏为真，获取使进程终止的信号编号</p>
+<p>◼ WIFSTOPPED(status) 非0，进程处于暂停状态<br>
+◼ WSTOPSIG(status) 如果上宏为真，获取使进程暂停的信号的编号<br>
+◼ WIFCONTINUED(status) 非0，进程暂停后已经继续运行</p>
+]]></content>
+      <categories>
+        <category>项目基础</category>
+      </categories>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/04/26/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(12)/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>项目基础——Linux多进程编程——exec函数族</title>
     <url>/2023/03/31/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(4)/</url>
     <content><![CDATA[<ol>
@@ -508,48 +707,16 @@ int execlp(const char *file, const char <em>arg, … /</em> (char *) NULL */);</
       </tags>
   </entry>
   <entry>
-    <title>项目基础——Linux多进程编程——进程退出、孤儿进程、僵尸进程</title>
-    <url>/2023/04/03/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(5)/</url>
-    <content><![CDATA[<h2 id="进程退出"><a class="markdownIt-Anchor" href="#进程退出"></a> 进程退出</h2>
-<p>exit()函数，C标准库函数，会刷新I/O缓冲，关闭文件描述符；<br>
-_exit()函数，Linux系统库函数，不会刷新缓冲区。</p>
-<span id="more"></span>
-<h2 id="孤儿进程"><a class="markdownIt-Anchor" href="#孤儿进程"></a> 孤儿进程</h2>
-<p>◼ 父进程运行结束，但子进程还在运行（未运行结束），这样的子进程就称为孤儿进程<br>
-（Orphan Process）。<br>
-◼ 每当出现一个孤儿进程的时候，内核就把孤儿进程的父进程设置为 init ，而 init<br>
-进程会循环地 wait() 它的已经退出的子进程。这样，当一个孤儿进程凄凉地结束<br>
-了其生命周期的时候，init 进程就会代表党和政府出面处理它的一切善后工作。<br>
-◼ 因此孤儿进程并不会有什么危害。</p>
-<h2 id="僵尸进程"><a class="markdownIt-Anchor" href="#僵尸进程"></a> 僵尸进程</h2>
-<p>◼ 每个进程结束之后, 都会释放自己地址空间中的用户区数据，内核区的 PCB 没有办法<br>
-自己释放掉，需要父进程去释放。<br>
-◼ 进程终止时，父进程尚未回收，子进程残留资源（PCB）存放于内核中，变成僵尸<br>
-（Zombie）进程。<br>
-◼ 僵尸进程不能被 kill -9 杀死，这样就会导致一个问题，如果父进程不调用 wait()<br>
-或 waitpid() 的话，那么保留的那段信息就不会释放，其进程号就会一直被占用，<br>
-但是系统所能使用的进程号是有限的，如果大量的产生僵尸进程，将因为没有可用的进<br>
-程号而导致系统不能产生新的进程，此即为僵尸进程的危害，应当避免。</p>
-<h2 id="进程回收"><a class="markdownIt-Anchor" href="#进程回收"></a> 进程回收</h2>
-<p>◼ 在每个进程退出的时候，内核释放该进程所有的资源、包括打开的文件、占用的内<br>
-存等。但是仍然为其保留一定的信息，这些信息主要主要指进程控制块PCB的信息<br>
-（包括进程号、退出状态、运行时间等）。<br>
-◼ 父进程可以通过调用wait或waitpid得到它的退出状态同时彻底清除掉这个进程。<br>
-◼ wait() 和 waitpid() 函数的功能一样，区别在于，wait() 函数会阻塞，<br>
-waitpid() 可以设置不阻塞，waitpid() 还可以指定等待哪个子进程结束。<br>
-◼ 注意：一次wait或waitpid调用只能清理一个子进程，清理多个子进程应使用循环。</p>
-<h2 id="退出信息相关宏函数"><a class="markdownIt-Anchor" href="#退出信息相关宏函数"></a> 退出信息相关宏函数</h2>
-<p>◼ WIFEXITED(status) 非0，进程正常退出<br>
-◼ WEXITSTATUS(status) 如果上宏为真，获取进程退出的状态（exit的参数）</p>
-<p>◼ WIFSIGNALED(status) 非0，进程异常终止<br>
-◼ WTERMSIG(status) 如果上宏为真，获取使进程终止的信号编号</p>
-<p>◼ WIFSTOPPED(status) 非0，进程处于暂停状态<br>
-◼ WSTOPSIG(status) 如果上宏为真，获取使进程暂停的信号的编号<br>
-◼ WIFCONTINUED(status) 非0，进程暂停后已经继续运行</p>
+    <title>项目基础——Linux多进程编程——父子进程</title>
+    <url>/2023/03/31/%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80(3)/</url>
+    <content><![CDATA[<p>读时共享，写时拷贝</p>
 ]]></content>
       <categories>
         <category>项目基础</category>
       </categories>
+      <tags>
+        <tag>process</tag>
+      </tags>
   </entry>
   <entry>
     <title>项目基础——Linux多进程编程——内存映射</title>
